@@ -1,0 +1,3 @@
+# Add one faculty record per block. Use faculty_profile_number as the matching image filename.
+# Example image path: assets/images/faculty_profile_images/001.jpg
+# Faculty records supplied by the college can be added below.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/pages/about.html</loc></url>
+  <url><loc>https://example.com/pages/principal.html</loc></url>
+  <url><loc>https://example.com/pages/academics.html</loc></url>
+  <url><loc>https://example.com/pages/admissions.html</loc></url>
+  <url><loc>https://example.com/pages/departments.html</loc></url>
+  <url><loc>https://example.com/pages/student-zone.html</loc></url>
+  <url><loc>https://example.com/pages/student-support.html</loc></url>
+  <url><loc>https://example.com/pages/attendance-code-of-conduct.html</loc></url>
+  <url><loc>https://example.com/pages/student-educational-verification.html</loc></url>
+  <url><loc>https://example.com/pages/student-achievements.html</loc></url>
+  <url><loc>https://example.com/pages/our-services.html</loc></url>
+  <url><loc>https://example.com/pages/clubs.html</loc></url>
+  <url><loc>https://example.com/pages/cells.html</loc></url>
+  <url><loc>https://example.com/pages/committees.html</loc></url>
+  <url><loc>https://example.com/pages/centre-for-excellence.html</loc></url>
+  <url><loc>https://example.com/pages/magazine-newsletter.html</loc></url>
+  <url><loc>https://example.com/pages/facilities.html</loc></url>
+  <url><loc>https://example.com/pages/events.html</loc></url>
+  <url><loc>https://example.com/pages/notices.html</loc></url>
+  <url><loc>https://example.com/pages/gallery.html</loc></url>
+  <url><loc>https://example.com/pages/downloads.html</loc></url>
+  <url><loc>https://example.com/pages/contact.html</loc></url>
+</urlset>

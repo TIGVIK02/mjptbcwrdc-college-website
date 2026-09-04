@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Departments · MJPTBCWRDC(W)</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <div class="page-hero"><div class="container"><h2>DEPARTMENTS</h2><p>Teaching departments of the college</p></div></div>
+    <section class="section"><div class="container department-layout">
+      <div class="department-list" aria-label="Departments">
+        <p class="eyebrow">Explore departments</p>
+        <button class="department-select is-selected" type="button" data-department="botany">Botany</button>
+        <button class="department-select" type="button" data-department="chemistry">Chemistry</button>
+        <button class="department-select" type="button" data-department="commerce">Commerce</button>
+        <button class="department-select" type="button" data-department="computer-science">Computer Science</button>
+        <button class="department-select" type="button" data-department="economics">Economics</button>
+        <button class="department-select" type="button" data-department="english">English</button>
+        <button class="department-select" type="button" data-department="history">History</button>
+        <button class="department-select" type="button" data-department="mathematics">Mathematics</button>
+        <button class="department-select" type="button" data-department="physics">Physics</button>
+        <button class="department-select" type="button" data-department="political-science">Political Science</button>
+        <button class="department-select" type="button" data-department="statistics">Statistics</button>
+        <button class="department-select" type="button" data-department="telugu">Telugu</button>
+        <button class="department-select" type="button" data-department="zoology">Zoology</button>
+      </div>
+      <article class="department-detail" data-department-panel="botany">
+        <p class="eyebrow">DEPARTMENT PROFILE</p><h2 class="department-title">BOTANY</h2>
+        <div class="department-tabs" role="tablist" aria-label="Botany information"><button class="department-tab is-active" role="tab" aria-selected="true" aria-controls="department-profile" id="tab-department-profile" data-tab="profile">Department profile</button><button class="department-tab" role="tab" aria-selected="false" aria-controls="department-faculty" id="tab-department-faculty" data-tab="faculty">Faculty</button><button class="department-tab" role="tab" aria-selected="false" aria-controls="department-activities" id="tab-department-activities" data-tab="activities">Activities</button></div>
+        <div class="department-panel is-active" id="department-profile" role="tabpanel" aria-labelledby="tab-department-profile"><h3>DEPARTMENT PROFILE</h3><p class="muted">Department-specific profile information will be added when supplied by the college.</p></div>
+        <div class="department-panel" id="department-faculty" role="tabpanel" aria-labelledby="tab-department-faculty" hidden><h3>FACULTY</h3><div id="faculty-list"><p class="muted">Loading faculty profiles...</p></div></div>
+        <div class="department-panel" id="department-activities" role="tabpanel" aria-labelledby="tab-department-activities" hidden><h3>ACTIVITIES</h3><p class="muted">Department activities will be listed here when confirmed by the college.</p></div>
+      </article>
+    </div></section>
+    <div class="faculty-modal" role="dialog" aria-modal="true" aria-labelledby="faculty-modal-title" hidden><div class="faculty-modal-content"><button class="nav-close faculty-modal-close" type="button" aria-label="Close faculty profile">&times;</button><p class="eyebrow">Faculty profile</p><h2 id="faculty-modal-title">Faculty profile to be added</h2><dl><dt>Name</dt><dd>To be supplied</dd><dt>Department</dt><dd>Selected department</dd><dt>Designation</dt><dd>To be supplied</dd><dt>Qualification</dt><dd>To be supplied</dd><dt>Teaching experience</dt><dd>To be supplied</dd><dt>Contact and email</dt><dd>To be supplied</dd></dl></div></div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+@media (max-width: 980px) {
+  .card-grid,
+  .dept-grid,
+  .two-col,
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .institutional-profile { grid-template-columns: 1fr 1fr; grid-template-areas: "core core" "departments courses" "university residential"; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .notice {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .brand-text .college-name {
+    font-size: 1.15rem;
+  }
+
+  .nav-groups { grid-template-columns: repeat(2, 1fr); }
+  .notice-highlight-inner, .campus-intro { grid-template-columns: 1fr; }
+  .notice-summary { grid-template-columns: 1fr 1fr; }
+  .principal-feature { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .department-layout { grid-template-columns: 1fr; }
+  .strength-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .card-grid,
+  .dept-grid,
+  .two-col,
+  .footer-grid,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar .container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 52vh;
+  }
+
+  .nav-panel { width: 100%; }
+  .nav-groups, .notice-summary { grid-template-columns: 1fr; }
+  .student-zone-grid { grid-template-columns: 1fr; }
+  .institutional-profile { grid-template-columns: 1fr; grid-template-areas: "core" "departments" "courses" "university" "residential"; }
+  .notice-summary p { padding: 0.5rem 0 0.5rem 1rem; }
+  .carousel-note { text-align: left; }
+  .carousel-viewport { aspect-ratio: 4 / 3; min-height: 300px; }
+  .principal-feature { grid-template-columns: 1fr; }
+  .principal-photo-large { height: 300px; }
+  .principal-photo-large { height: auto; aspect-ratio: 4 / 3; }
+  .strength-grid { grid-template-columns: 1fr; }
+  .student-grid { grid-template-columns: 1fr; }
+  .footer-contact { grid-template-columns: 1fr; }
+  .department-detail { padding: 1rem; }
+  .department-tabs { display: grid; grid-template-columns: 1fr; }
+  .department-tab { text-align: left; border-left: 3px solid transparent; border-bottom: 0; }
+  .department-tab.is-active { border-left-color: var(--gold); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  body { opacity: 1 !important; }
+}

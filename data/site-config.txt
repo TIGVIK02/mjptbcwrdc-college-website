@@ -1,0 +1,16 @@
+officialName=Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Degree College for Women
+shortName=MJPTBCWRDC(W)
+headerLine1=Mahatma Jyothiba Phule
+headerLine2=Telangana Backward Classes
+headerLine3=Welfare Residential Degree College for Women
+location=Station Ghanpur · Women
+address=Station Ghanpur, Pembarthy, Jangaon, Telangana 506201
+affiliation=Kakatiya University
+society=MJPTBCWREIS
+secretary=B. Saidulu, IFS
+officeAddress=Masab Tank, Hyderabad
+principal=Dr. K. Bhagyalaxmi
+phone=+91 7013310928
+email=mjptbcwrdcstationghanpurwomen@gmail.com
+officeHours=8:00 a.m. to 4:30 p.m.
+copyrightText=MJPTBCWRDC(W), Station Ghanpur
