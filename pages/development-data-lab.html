@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development Data Lab · MJPTBCWRDC(W)</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="development-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <div class="page-hero"><div class="container"><p class="eyebrow">Development only</p><h2>DATA IMPORT LAB</h2><p>Test the future document and data workflow with fictional local samples.</p></div></div>
+    <section class="section"><div class="container">
+      <div class="dev-warning"><strong>DEVELOPMENT DATA ONLY.</strong> Records stored here remain in this browser's IndexedDB and are never treated as official college information.</div>
+      <div class="two-col dev-lab-layout">
+        <section class="panel" aria-labelledby="import-title">
+          <p class="eyebrow">Input file</p><h2 id="import-title">IMPORT A SAMPLE</h2>
+          <label for="dataset-type">What does this file represent?</label>
+          <select id="dataset-type">
+            <option value="faculty">Faculty CSV</option>
+            <option value="students">Student strength TXT</option>
+            <option value="notices">Notice index JSON</option>
+            <option value="notice-pdf">Notice PDF</option>
+            <option value="image">Calendar or gallery image</option>
+            <option value="results">Result analysis TXT</option>
+            <option value="pyq">Question paper metadata TXT</option>
+          </select>
+          <label for="data-file">Choose a local file</label>
+          <input id="data-file" type="file" accept=".csv,.txt,.json,.pdf,.svg,image/*">
+          <p class="muted">Try the fictional files in <a href="../dev-samples/README.md" target="_blank" rel="noopener">dev-samples</a>. The browser cannot scan folders automatically, so every import starts with an explicit file selection.</p>
+          <button class="btn" id="import-button" type="button">VALIDATE AND IMPORT</button>
+          <div id="import-status" class="form-success" role="status" tabindex="-1" hidden></div>
+        </section>
+        <section class="panel" aria-labelledby="workflow-title">
+          <p class="eyebrow">Observable pipeline</p><h2 id="workflow-title">INPUT TO PUBLIC DISPLAY</h2>
+          <ol class="workflow-steps" id="workflow-steps">
+            <li data-step="input">INPUT FILE / DATA</li><li data-step="upload">UPLOAD / IMPORT</li><li data-step="validate">VALIDATION</li><li data-step="parse">PARSING / EXTRACTION</li><li data-step="store">DATABASE STORAGE</li><li data-step="review">ADMIN REVIEW / EDIT</li><li data-step="display">PUBLIC WEBSITE PREVIEW</li>
+          </ol>
+          <div id="workflow-detail" class="muted">Select a file to begin. Each step will report its result here.</div>
+        </section>
+      </div>
+    </div></section>
+    <section class="section dev-results-section"><div class="container">
+      <div class="section-head"><div><p class="eyebrow">Administrator review</p><h2>IMPORTED RECORDS</h2></div><button class="archive-button" id="clear-data" type="button">CLEAR DEVELOPMENT DATA</button></div>
+      <div id="record-list" aria-live="polite"><p class="muted">No development records have been imported.</p></div>
+    </div></section>
+    <section class="section"><div class="container">
+      <p class="eyebrow">Public website preview</p><h2>APPROVED RECORD DISPLAY</h2>
+      <div id="public-preview" class="resource-list" aria-live="polite"><p class="muted">Approve an imported record to preview its public-facing output.</p></div>
+    </div></section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/script.js"></script>
+  <script src="../js/development-data-lab.js"></script>
+</body>
+</html>

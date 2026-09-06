@@ -1,0 +1,43 @@
+# Leadership records for the homepage. IMAGE paths are local copies; SOURCE_PAGE and SOURCE_IMAGE document verified origins when available.
+ROLE=HON'BLE CHIEF MINISTER
+NAME=Sri Anumula Revanth Reddy
+DESIGNATION=Chief Minister, Government of Telangana
+IMAGE=assets/images/leadership/chief-minister.png
+DESCRIPTION=Chief Minister of Telangana and institutional leadership for quality education and student welfare.
+SOURCE_PAGE=https://mjptbcwreis.telangana.gov.in/
+SOURCE_IMAGE=https://mjptbcwreis.telangana.gov.in/assets/images/CM-card.png
+
+ROLE=HON'BLE BC WELFARE MINISTER
+NAME=Sri Ponnam Prabhakar
+DESIGNATION=Minister for Backward Classes Welfare, Government of Telangana
+IMAGE=assets/images/leadership/bc-welfare-minister.png
+DESCRIPTION=Minister responsible for Backward Classes Welfare and the institutions serving its students.
+SOURCE_PAGE=https://mjptbcwreis.telangana.gov.in/
+SOURCE_IMAGE=https://mjptbcwreis.telangana.gov.in/assets/images/minister.png
+
+ROLE=PRINCIPAL SECRETARY
+NAME=Sri Rahul Bojja, IAS
+DESIGNATION=Principal Secretary to Government (FAC), Backward Classes Welfare Department
+IMAGE=
+DESCRIPTION=Principal Secretary to Government (FAC), Backward Classes Welfare Department.
+SOURCE_PAGE=
+
+ROLE=SECRETARY
+NAME=Sri B. Saidulu, IFS
+DESIGNATION=Secretary, MJPTBCWREIS
+IMAGE=
+DESCRIPTION=Secretary, MJPTBCWREIS.
+SOURCE_PAGE=
+
+ROLE=RCO
+NAME=Information to be updated
+DESIGNATION=Regional Coordinator Officer / RCO, MJPTBCWREIS
+IMAGE=
+DESCRIPTION=Regional Coordinating Officer / RCO, MJPTBCWREIS. Verified local identity and photograph to be supplied.
+SOURCE_PAGE=
+
+ROLE=PRINCIPAL
+NAME=Dr. K. Bhagyalaxmi
+DESIGNATION=Principal, MJPTBCWRDC(W), Station Ghanpur
+IMAGE=assets/images/principal-placeholder.svg
+DESCRIPTION=Leads the college's academic environment and residential student support.

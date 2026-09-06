@@ -1,0 +1,8 @@
+# Add one blank-line-separated record for each officially supplied result analysis.
+# ACADEMIC_YEAR=2025
+# PROGRAMME=B.SC MPCS
+# YEAR_SEMESTER=I
+# STUDENTS=0
+# APPEARED=0
+# PASSED=0
+# PASS_PERCENTAGE=0

@@ -9,7 +9,9 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="MJPTBCWRDC(W), Station Ghanpur">
   <meta property="og:description" content="Residential degree education for women students at Station Ghanpur, affiliated to Kakatiya University.">
-  <meta property="og:image" content="assets/images/logo/crest.svg">
+  <meta property="og:image" content="assets/images/logo/logo.png">
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/logo.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -20,27 +22,38 @@
   <main id="main">
     <section class="hero">
       <div class="container hero-inner">
-        <p class="kicker"><span data-config-text="location">Station Ghanpur · Women</span> · <span data-config-text="affiliation">Kakatiya University</span></p>
-        <h1>LEARN, LIVE, AND GROW WITH PURPOSE.</h1>
+        <h2>LEARN, LIVE, AND GROW WITH PURPOSE.</h2>
         <p>Residential degree education in a supportive academic environment at Station Ghanpur, Pembarthy, Jangaon.</p>
         <div class="hero-actions">
-          <a class="btn" href="pages/academics.html">Explore academics</a>
-          <a class="btn btn-outline" href="pages/about.html">About the college</a>
+          <a class="btn" href="pages/academics.html">EXPLORE ACADEMICS</a>
+          <a class="btn btn-outline" href="pages/vision-and-mission.html">ABOUT THE COLLEGE</a>
         </div>
       </div>
     </section>
 
-    <section class="section notice-preview" aria-labelledby="notice-preview-title">
-      <div class="container"><div class="section-head"><div><p class="eyebrow">Official updates</p><h2 id="notice-preview-title">LATEST NOTICES</h2></div><a class="text-link" href="pages/notices.html">View all notices <span aria-hidden="true">→</span></a></div><div id="notice-preview" class="notice-table-wrap" aria-live="polite"><p class="muted">Loading notices...</p></div></div>
+    <section class="ticker" id="quick-notice-ticker" aria-label="Quick notices" hidden>
+      <div class="ticker-label">NOTICES</div>
+      <div class="ticker-viewport"><div class="ticker-track" id="quick-notice-track" aria-live="polite"></div></div>
+      <a class="ticker-more" href="pages/notices.html">ALL NOTICES</a>
+    </section>
+
+    <section class="section leadership-section" aria-labelledby="leadership-title">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">INSTITUTIONAL LEADERSHIP</p><h2 id="leadership-title">LEADERSHIP / GUIDING THE INSTITUTION</h2></div><p class="muted leadership-intro">Institutional leadership and administration.</p></div>
+        <div class="leadership-carousel carousel" data-leadership-carousel tabindex="0" aria-roledescription="carousel" aria-label="Institutional leadership">
+          <div class="carousel-viewport"><div id="leadership-grid" class="carousel-track" aria-live="polite"><div class="carousel-slide"><p class="muted">Loading leadership information...</p></div></div></div>
+          <button class="carousel-control carousel-prev" type="button" aria-label="Previous leader">←</button><button class="carousel-control carousel-next" type="button" aria-label="Next leader">→</button>
+        </div>
+      </div>
     </section>
 
     <section class="section carousel-section" aria-labelledby="carousel-title">
       <div class="container">
         <div class="section-head">
-          <div><p class="eyebrow">A closer look</p><h2 id="carousel-title">COLLEGE LIFE IN FOCUS</h2></div>
+          <div><p class="eyebrow">A CLOSER LOOK</p><h2 id="carousel-title">COLLEGE LIFE IN FOCUS</h2></div>
           <p class="muted carousel-note">Authentic college photographs can be placed in the campus image folders.</p>
         </div>
-          <div class="carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="College image placeholders">
+        <div class="carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="College image placeholders">
           <div class="carousel-viewport">
             <div class="carousel-track">
               <div class="carousel-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="carousel-placeholder"><span>Campus photograph to be added</span><strong>Campus</strong></div></div>
@@ -50,33 +63,14 @@
           </div>
           <button class="carousel-control carousel-prev" type="button" aria-label="Previous slide">←</button>
           <button class="carousel-control carousel-next" type="button" aria-label="Next slide">→</button>
-          <button class="carousel-pause" type="button" aria-label="Pause slideshow" aria-pressed="false">Pause</button>
         </div>
-      </div>
-    </section>
-
-    <section class="section principal-section">
-      <div class="container principal-feature">
-        <img class="principal-photo principal-photo-large" src="assets/images/principal-placeholder.svg" alt="Principal photograph to be added">
-        <div class="principal-copy"><p class="eyebrow">PRINCIPAL'S MESSAGE</p><h2>A WELCOME FROM THE PRINCIPAL</h2><blockquote>“We are committed to quality higher education and a supportive residential environment for women students, especially from backward class communities.”</blockquote><p class="muted">The college encourages academic excellence, self-confidence, leadership, employability skills, and overall personality development.</p><p><strong>Dr. K. Bhagyalaxmi</strong><br>Principal</p></div>
-      </div>
-    </section>
-
-
-    <section class="section at-glance">
-      <div class="container institutional-profile">
-        <div class="profile-core"><p class="eyebrow">AT A GLANCE</p><h2>AN INSTITUTIONAL PROFILE</h2><p>Residential higher education for women, connected to the academic community of Kakatiya University.</p></div>
-        <div class="profile-node profile-node-departments"><strong>13</strong><span>DEPARTMENTS</span></div>
-        <div class="profile-node profile-node-courses"><strong>8</strong><span>UG COURSES</span></div>
-        <div class="profile-node profile-node-university"><strong>KU</strong><span data-config-text="affiliation">KAKATIYA UNIVERSITY</span></div>
-        <div class="profile-node profile-node-residential"><strong>W</strong><span>WOMEN / RESIDENTIAL</span></div>
       </div>
     </section>
 
     <section class="section strength-section" aria-labelledby="strength-title">
       <div class="container">
         <div class="section-head"><div><p class="eyebrow">CURRENT STUDENT STRENGTH</p><h2 id="strength-title">ADMISSIONS AT A GLANCE</h2></div><p class="muted">Current student/admission strength by academic year.</p></div>
-        <div id="student-strength" class="strength-grid" aria-live="polite"><p class="muted">Loading current student strength...</p></div>
+        <div id="student-strength" class="strength-grid" aria-live="polite" aria-busy="true"></div>
       </div>
     </section>
 
@@ -87,7 +81,7 @@
           <h2>QUALITY HIGHER EDUCATION WITH RESIDENTIAL SUPPORT.</h2>
           <p><span data-config-text="officialName">Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Degree College for Women</span>, <span data-config-text="location">Station Ghanpur · Women</span>, is dedicated to providing quality higher education and residential facilities to women students, particularly from backward class communities.</p>
           <p>The college promotes academic excellence, self-confidence, leadership, employability skills, and overall personality development, enabling students to become responsible and empowered members of society.</p>
-          <a class="btn" href="pages/about.html">Vision &amp; mission</a>
+          <a class="btn" href="pages/vision-and-mission.html">Vision &amp; mission</a>
         </div>
         <aside class="purpose-panel"><div><p class="eyebrow">OUR VISION</p><h3>EMPOWERED WOMEN, RESPONSIBLE CITIZENS</h3><p>To create empowered women who excel in education, embrace opportunities, and contribute responsibly to society.</p></div><div class="mission-block"><p class="eyebrow">OUR MISSION</p><h3>EDUCATION WITH EXCELLENCE AND PURPOSE</h3><p>Educate with excellence, nurture leadership and self-reliance, and promote equality and social responsibility.</p></div></aside>
       </div>
@@ -100,6 +94,15 @@
           <h2>RESIDENTIAL SUPPORT FOR STUDENT LIFE.</h2>
           <p class="muted">Explore the facilities and student-life information currently available. Campus photographs and further details can be added as authentic college material becomes available.</p>
         </div>
+        <div class="campus-life-carousel carousel" data-campus-carousel tabindex="0" aria-roledescription="carousel" aria-label="Campus life placeholder images">
+          <div class="carousel-viewport"><div class="carousel-track">
+            <div class="carousel-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4"><img src="assets/images/campus_life/campus-01.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 4" hidden><img src="assets/images/campus_life/campus-02.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" hidden><img src="assets/images/campus_life/campus-03.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 4" hidden><img src="assets/images/campus_life/campus-04.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
+          </div></div>
+          <button class="carousel-control carousel-prev" type="button" aria-label="Previous campus image">←</button><button class="carousel-control carousel-next" type="button" aria-label="Next campus image">→</button>
+        </div>
         <div class="campus-links"><a class="panel-link" href="pages/facilities.html"><strong>FACILITIES</strong><span>Residential support and student provisions <span aria-hidden="true">→</span></span></a><a class="panel-link" href="pages/student-zone.html"><strong>STUDENT ZONE</strong><span>Student information and support <span aria-hidden="true">→</span></span></a></div>
       </div>
     </section>
@@ -107,5 +110,7 @@
   </main>
   <div id="site-footer"></div>
   <script src="js/script.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/notices.js"></script>
 </body>
 </html>

@@ -1,0 +1,2 @@
+TITLE=Sample Admission Notice
+PDF=sample-admission-notice.pdf

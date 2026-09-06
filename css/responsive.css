@@ -26,10 +26,10 @@
     font-size: 1.15rem;
   }
 
-  .nav-groups { grid-template-columns: repeat(2, 1fr); }
   .notice-highlight-inner, .campus-intro { grid-template-columns: 1fr; }
   .notice-summary { grid-template-columns: 1fr 1fr; }
   .principal-feature { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .leadership-slide { grid-template-columns: minmax(170px, .7fr) 1.3fr; gap: 1rem; padding: 1.2rem; }
   .department-layout { grid-template-columns: 1fr; }
   .strength-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -44,22 +44,32 @@
   }
 
   .topbar .container {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-end;
+    text-align: right;
   }
+
+  .topbar-links {
+    justify-content: flex-end;
+  }
+
+  .ticker { display: grid; grid-template-columns: auto 1fr; }
+  .ticker-more { grid-column: 1 / -1; text-align: center; border-top: 1px solid rgba(255,255,255,.2); }
 
   .hero {
     min-height: 52vh;
   }
 
   .nav-panel { width: 100%; }
-  .nav-groups, .notice-summary { grid-template-columns: 1fr; }
+  .notice-summary { grid-template-columns: 1fr; }
   .student-zone-grid { grid-template-columns: 1fr; }
   .institutional-profile { grid-template-columns: 1fr; grid-template-areas: "core" "departments" "courses" "university" "residential"; }
   .notice-summary p { padding: 0.5rem 0 0.5rem 1rem; }
   .carousel-note { text-align: left; }
   .carousel-viewport { aspect-ratio: 4 / 3; min-height: 300px; }
   .principal-feature { grid-template-columns: 1fr; }
+  .leadership-carousel .carousel-viewport { min-height: 560px; aspect-ratio: auto; }
+  .leadership-slide { grid-template-columns: 1fr; gap: 1rem; padding: 1rem; }
+  .leadership-slide .leadership-portrait { max-width: 260px; width: 100%; margin-inline: auto; }
   .principal-photo-large { height: 300px; }
   .principal-photo-large { height: auto; aspect-ratio: 4 / 3; }
   .strength-grid { grid-template-columns: 1fr; }
