@@ -1,0 +1,33 @@
+MJPTBCW TIMETABLE DATA-QUALITY REPORT
+==================================================
+Source: consol_tt.xlsx
+Duplicate policy: last
+
+WARNINGS:
+- [B.A. Year 1] Duplicate schedule for 'I BA' on Saturday: source rows [98, 101]. Policy='last'.
+- [B.Com. (Computer Applications) Year 1 Section A] Duplicate schedule for 'I BCOM-CA-A' on Saturday: source rows [99, 102]. Policy='last'.
+- [B.Com. (Computer Applications) Year 1 Section B] Duplicate schedule for 'I BCOM-CA-B' on Saturday: source rows [100, 103]. Policy='last'.
+
+Detected sections:
+- B.Com. (Computer Applications): Section A, Section B
+- B.Z.C.: Section A
+- M.P.Cs.: Section A
+
+Generated files:
+- B.A. — Year 1: ba\year_1.html
+- B.A. — Year 2: ba\year_2.html
+- B.A. — Year 3: ba\year_3.html
+- B.Com. (Computer Applications) — Year 1 — Section A: bcom_ca\year_1\section_a.html
+- B.Com. (Computer Applications) — Year 1 — Section B: bcom_ca\year_1\section_b.html
+- B.Com. (Computer Applications) — Year 2: bcom_ca\year_2.html
+- B.Com. (Computer Applications) — Year 3: bcom_ca\year_3.html
+- B.Com. (Business Administration) — Year 3: bcom_ba\year_3.html
+- B.Z.C. — Year 1 — Section A: bzc\year_1\section_a.html
+- B.Z.C. — Year 2: bzc\year_2.html
+- B.Z.C. — Year 3: bzc\year_3.html
+- M.P.Cs. — Year 1 — Section A: mpcs\year_1\section_a.html
+- M.P.Cs. — Year 2: mpcs\year_2.html
+- M.P.Cs. — Year 3: mpcs\year_3.html
+- M.Sc.s — Year 1: mscs\year_1.html
+- M.Sc.s — Year 2: mscs\year_2.html
+- M.Sc.s — Year 3: mscs\year_3.html

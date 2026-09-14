@@ -1,3 +1,11 @@
-# Add one faculty record per block. Use faculty_profile_number as the matching image filename.
-# Example image path: assets/images/faculty_profile_images/001.jpg
-# Faculty records supplied by the college can be added below.
+# Add one faculty record per blank-line-separated block.
+
+# EXAMPLE RECORD - DELETE THIS AFTER ADDING REAL FACULTY DATA
+
+faculty_profile_number=001
+name=Example Faculty Name
+department=TELUGU
+designation=Assistant Professor
+qualification=M.A., M.Phil.
+email=example@example.com
+image=assets/images/faculty_profile_images/Telugu/001.jpg

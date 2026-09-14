@@ -1,0 +1,121 @@
+[
+  {
+    "programme": "BA",
+    "title": "B.A.",
+    "year": 1,
+    "section": null,
+    "path": "ba/year_1.html"
+  },
+  {
+    "programme": "BA",
+    "title": "B.A.",
+    "year": 2,
+    "section": null,
+    "path": "ba/year_2.html"
+  },
+  {
+    "programme": "BA",
+    "title": "B.A.",
+    "year": 3,
+    "section": null,
+    "path": "ba/year_3.html"
+  },
+  {
+    "programme": "BCOM_CA",
+    "title": "B.Com. (Computer Applications)",
+    "year": 1,
+    "section": "A",
+    "path": "bcom_ca/year_1/section_a.html"
+  },
+  {
+    "programme": "BCOM_CA",
+    "title": "B.Com. (Computer Applications)",
+    "year": 1,
+    "section": "B",
+    "path": "bcom_ca/year_1/section_b.html"
+  },
+  {
+    "programme": "BCOM_CA",
+    "title": "B.Com. (Computer Applications)",
+    "year": 2,
+    "section": null,
+    "path": "bcom_ca/year_2.html"
+  },
+  {
+    "programme": "BCOM_CA",
+    "title": "B.Com. (Computer Applications)",
+    "year": 3,
+    "section": null,
+    "path": "bcom_ca/year_3.html"
+  },
+  {
+    "programme": "BCOM_BA",
+    "title": "B.Com. (Business Administration)",
+    "year": 3,
+    "section": null,
+    "path": "bcom_ba/year_3.html"
+  },
+  {
+    "programme": "BZC",
+    "title": "B.Z.C.",
+    "year": 1,
+    "section": "A",
+    "path": "bzc/year_1/section_a.html"
+  },
+  {
+    "programme": "BZC",
+    "title": "B.Z.C.",
+    "year": 2,
+    "section": null,
+    "path": "bzc/year_2.html"
+  },
+  {
+    "programme": "BZC",
+    "title": "B.Z.C.",
+    "year": 3,
+    "section": null,
+    "path": "bzc/year_3.html"
+  },
+  {
+    "programme": "MPCS",
+    "title": "M.P.Cs.",
+    "year": 1,
+    "section": "A",
+    "path": "mpcs/year_1/section_a.html"
+  },
+  {
+    "programme": "MPCS",
+    "title": "M.P.Cs.",
+    "year": 2,
+    "section": null,
+    "path": "mpcs/year_2.html"
+  },
+  {
+    "programme": "MPCS",
+    "title": "M.P.Cs.",
+    "year": 3,
+    "section": null,
+    "path": "mpcs/year_3.html"
+  },
+  {
+    "programme": "MSCS",
+    "title": "M.Sc.s",
+    "year": 1,
+    "section": null,
+    "path": "mscs/year_1.html"
+  },
+  {
+    "programme": "MSCS",
+    "title": "M.Sc.s",
+    "year": 2,
+    "section": null,
+    "path": "mscs/year_2.html"
+  },
+  {
+    "programme": "MSCS",
+    "title": "M.Sc.s",
+    "year": 3,
+    "section": null,
+    "path": "mscs/year_3.html"
+  }
+]

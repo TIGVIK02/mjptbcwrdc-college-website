@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timetable · MJPTBCWRDC(W)</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <div class="page-hero"><div class="container"><h2>TIMETABLE</h2><p>Select a programme and year to view the generated timetable.</p></div></div>
+    <section class="section">
+      <div class="container timetable-page">
+        <div class="timetable-controls" aria-labelledby="timetable-selection-heading">
+          <p class="eyebrow">Academic schedule</p>
+          <h2 id="timetable-selection-heading">SELECT TIMETABLE</h2>
+          <label for="programme-select">Programme</label>
+          <select id="programme-select"></select>
+          <label for="year-select">Year</label>
+          <select id="year-select"></select>
+          <div class="timetable-section-field" hidden>
+            <label for="section-select">Section</label>
+            <select id="section-select"></select>
+          </div>
+        </div>
+        <div class="timetable-status" role="status" aria-live="polite">Loading available timetables...</div>
+        <section class="timetable-view" aria-labelledby="selected-timetable-title" hidden>
+          <h2 id="selected-timetable-title"></h2>
+          <div class="timetable-frame-wrap"><iframe class="timetable-frame" title="Generated timetable" loading="lazy"></iframe></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/script.js"></script>
+  <script src="../js/timetable.js"></script>
+</body>
+</html>

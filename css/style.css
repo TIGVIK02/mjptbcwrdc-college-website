@@ -30,6 +30,19 @@ table {
   font-family: "Times New Roman", Times, serif;
 }
 
+.timetable-page { max-width: 1180px; }
+.timetable-controls { display: grid; gap: .55rem; max-width: 34rem; }
+.timetable-controls h2 { margin-bottom: .4rem; }
+.timetable-controls label { color: var(--navy); font-weight: 600; }
+.timetable-controls select { width: 100%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: .7rem .8rem; font-size: 1rem; }
+.timetable-years { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .7rem; }
+.timetable-year { border: 1px solid var(--navy-soft); background: var(--paper); color: var(--navy); padding: .55rem .9rem; cursor: pointer; }
+.timetable-year:hover, .timetable-year.is-selected { background: var(--navy); color: var(--paper); }
+.timetable-status { margin: 1.5rem 0; color: var(--muted); }
+.timetable-view { margin-top: 2rem; }
+.timetable-frame-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.timetable-frame { display: block; width: 100%; min-width: 760px; height: 1100px; border: 0; }
+
 html {
   scroll-behavior: smooth;
 }
