@@ -305,9 +305,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 /* Hero */
 .hero {
   position: relative;
-  background: linear-gradient(90deg, rgba(11, 37, 64, .9), rgba(11, 37, 64, .42)), url("../assets/images/Infrastructure/rahul_bojja_ias.jpg") center 30% / cover no-repeat;
+  background: linear-gradient(90deg, rgba(11, 37, 64, .9), rgba(11, 37, 64, .42)), url("../assets/images/Infrastructure/college_entrance.jpg") center 30% / cover no-repeat;
   color: white;
-  min-height: 62vh;
+  min-height: 50vh;
   display: grid;
   align-items: end;
 }
