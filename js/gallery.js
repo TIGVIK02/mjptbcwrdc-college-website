@@ -16,40 +16,6 @@
     };
     const stop = function () { window.clearInterval(timer); };
     const start = function () { stop(); if (!reducedMotion && items.length > 1) timer = window.setInterval(function () { show(current + 1); }, 5000); };
-    const galleryRoot = new URL(Site.pageBase + "assets/images/gallery/", window.location.href).href;
-    const supportedFile = function (path) { return /\.(jpg|jpeg|png|pdf)$/i.test(path); };
-    const parseDirectory = function (html, baseUrl) {
-      const documentFragment = new DOMParser().parseFromString(html, "text/html");
-      const title = documentFragment.querySelector("title");
-      if (!title || !/listing directory/i.test(title.textContent)) throw new Error("Directory listing unavailable");
-      return Array.from(documentFragment.querySelectorAll("a[href]"))
-        .map(function (link) { return new URL(link.getAttribute("href"), baseUrl); })
-        .filter(function (url) { return url.origin === window.location.origin; });
-    };
-    const discoverFromDirectory = function () {
-      return fetch(galleryRoot, { cache: "no-store" }).then(function (response) {
-        if (!response.ok) throw new Error("Gallery directory unavailable");
-        return response.text();
-      }).then(function (html) {
-        const rootPath = new URL(galleryRoot, window.location.href).pathname;
-        const folders = parseDirectory(html, galleryRoot).filter(function (url) { const remainder = url.pathname.slice(rootPath.length); return url.pathname.startsWith(rootPath) && remainder && !remainder.includes("/") && !supportedFile(url.pathname); });
-        return Promise.all(folders.map(function (folder) {
-          return fetch(folder.href, { cache: "no-store" }).then(function (response) {
-            if (!response.ok) throw new Error("Gallery category unavailable");
-            return response.text();
-          }).then(function (categoryHtml) {
-            const files = parseDirectory(categoryHtml, folder.href).filter(function (url) { const remainder = url.pathname.slice(folder.pathname.length).replace(/^\/+/, ""); return url.pathname.startsWith(folder.pathname) && remainder && !remainder.includes("/") && supportedFile(url.pathname); }).map(function (url) { return url.pathname.replace(/^\//, ""); }).sort();
-            const name = decodeURIComponent(folder.pathname.split("/").filter(Boolean).pop());
-            return { category: name, files: files };
-          });
-        }));
-      });
-    };
-    const loadCategories = function () {
-      return discoverFromDirectory().catch(function () {
-        return Site.loadData("data/media-manifest.json", "json").then(function (manifest) { return manifest.gallery || []; });
-      });
-    };
     const render = function (files) {
       stop(); items = files || []; current = 0; track.replaceChildren();
       items.forEach(function (path, index) {
@@ -62,7 +28,8 @@
       show(0); start();
     };
     const selectCategory = function (button, category) { categoriesMount.querySelectorAll("button").forEach(function (item) { item.classList.toggle("is-selected", item === button); }); render(category.files); };
-    loadCategories().then(function (categories) {
+    Site.loadData("data/media-manifest.json", "json").then(function (manifest) {
+      const categories = manifest.gallery || [];
       categoriesMount.replaceChildren();
       if (!categories.length) { status.hidden = false; carousel.hidden = true; return; }
       categories.forEach(function (category, index) { const button = document.createElement("button"); button.type = "button"; button.className = "gallery-category"; button.textContent = String(category.category || "Gallery").toUpperCase(); button.addEventListener("click", function () { selectCategory(button, category); }); categoriesMount.appendChild(button); if (index === 0) selectCategory(button, category); });

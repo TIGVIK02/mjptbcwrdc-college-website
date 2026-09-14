@@ -12,7 +12,7 @@
     const view = page.querySelector(".timetable-view");
     const title = page.querySelector("#selected-timetable-title");
     const frame = page.querySelector(".timetable-frame");
-    const manifestPath = "../website raw data/timetable_output/timetable_manifest.json";
+    const manifestPath = Site.pageBase + "website raw data/timetable_output/timetable_manifest.json";
     const programmeNames = { BA: "B.A.", BCOM_BA: "B.Com. (Business Administration)", BCOM_CA: "B.Com. (Computer Applications)", BZC: "B.Z.C.", MPCS: "M.P.Cs.", MSCS: "M.Sc.s" };
     let programmes = [];
     let selectedProgramme = null;
@@ -28,7 +28,7 @@
       const entry = selectedProgramme && selectedProgramme.entries.find(function (item) { return item.year === selectedYear && (item.section || null) === (selectedSection || null); });
       if (!entry) { clearView("Timetable currently unavailable."); return; }
       title.textContent = entry.title + " - Year " + entry.year + (entry.section ? " - Section " + entry.section : "") + " Timetable";
-      frame.src = "../website raw data/timetable_output/" + entry.path;
+      frame.src = Site.pageBase + "website raw data/timetable_output/" + entry.path;
       view.hidden = false;
       status.textContent = "";
     };

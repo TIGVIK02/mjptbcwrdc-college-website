@@ -1,2 +1,2 @@
-TITLE=Sample Admission Notice
+TITLE=sample-admission-notice
 PDF=sample-admission-notice.pdf

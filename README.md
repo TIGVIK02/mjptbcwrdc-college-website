@@ -28,16 +28,13 @@ Then open the local URL printed by the command.
 
 ## Media folders
 
-For local development, the gallery reads the directory listings exposed by the local static server on every page load. Add a category folder and supported files under `assets/images/gallery/`, then refresh the Gallery page; no HTML, JavaScript, JSON, or generation command is required.
-
-The generated media mapping can still be refreshed for static hosts that do not expose directory listings:
+Folder-backed content is discovered by one project-wide build step. Add, remove, or rename files in the source folders, then run:
 
 ```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\tools\generate-media-manifests.ps1
+python .\tools\build_content.py
 ```
 
-The generated `data/media-manifest.json` drives the homepage carousels and is the Gallery fallback when runtime directory discovery is unavailable. Gallery categories are discovered from immediate subfolders; supported gallery files are JPG, JPEG, PNG, and PDF. Static hosting without directory listings cannot provide true refresh-only folder discovery, so it uses the last generated fallback mapping.
+The build discovers PYQ PDFs, Magazine PDFs, homepage/gallery media, document notices, and generated timetables, then writes committed manifests and outputs for GitHub Pages. Gallery categories are discovered from immediate subfolders; supported gallery files are JPG, JPEG, PNG, and PDF.
 
 ## Development input pipeline
 
@@ -48,7 +45,7 @@ Development fixtures live separately in `dev-samples/` and are clearly fictional
 Input contracts:
 
 - Public notices read `assets/notice_files/quick-notices.txt` and `assets/notice_files/pdf-notices.txt`; document PDFs remain in `assets/notice_files/`.
-- Public student, faculty, and result views read lightweight files under `data/`. The PYQ page reads the HTML directory listing at `assets/pyq/` and filters it to direct PDF files.
+- Public student, faculty, result, PYQ, Magazine, and Gallery views read committed files under `data/`. Folder-backed PDFs/media are discovered by `tools/build_content.py`, not by browser directory enumeration.
 - The contact form validates the enquiry, records a development-only audit entry in IndexedDB, and opens the user's email client for final review and sending.
 - When a backend is introduced, replace the IndexedDB adapter in `js/development-data-lab.js` with authenticated upload/API calls and server-side validation; keep the same parsed record contracts and review states.
 
@@ -61,9 +58,9 @@ Every standalone HTML page loads `js/script.js` first. That global file owns sha
 - `departments.js`: department tabs, faculty filtering, and profiles.
 - `contact.js`: enquiry validation, development audit capture, and email draft preparation.
 - `gallery.js`: generated gallery categories and the single image/PDF carousel.
-- `magazine.js`: annual magazine PDF directory discovery and archive rendering.
+- `magazine.js`: annual magazine manifest and archive rendering.
 - `result-analysis.js`: result-analysis data rendering.
-- `previous-year-question-papers.js`: PYQ directory-listing parsing and PDF actions.
+- `previous-year-question-papers.js`: PYQ manifest rendering and PDF actions.
 - `development-data-lab.js`: development-only file import, validation, review, and preview.
 
 Content-only pages use the global file without an unnecessary page module. Page modules guard their own mount elements and wait for `Site.onReady()`, so one page's custom behavior does not run on another page.
@@ -72,4 +69,4 @@ The notice page requests the two TXT files through the local/static hosting laye
 
 ### PYQ V1 hosting limitation
 
-The current V1 project is static-only. Browsers cannot enumerate a hosting server's filesystem, and GitHub Pages does not provide a directory listing API. Local preview with `npx serve .` exposes an HTML listing for `assets/pyq/`, which this page parses without hardcoded filenames. On a static host that disables directory listings, the page shows the unavailable state; adding a PDF alone cannot be auto-discovered there without a generated manifest or server/API support.
+The current V1 project is static-only. GitHub Pages does not provide a directory listing API, so folder-backed content must be regenerated locally and committed before deployment. The browser reads those committed manifests with the same base-path logic as the other TXT/JSON data files.
