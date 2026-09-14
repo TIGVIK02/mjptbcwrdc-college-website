@@ -18,14 +18,14 @@ SOURCE_IMAGE=https://mjptbcwreis.telangana.gov.in/assets/images/minister.png
 ROLE=PRINCIPAL SECRETARY
 NAME=Sri Rahul Bojja, IAS
 DESIGNATION=Principal Secretary to Government (FAC), Backward Classes Welfare Department
-IMAGE=
+IMAGE=assets/images/Infrastructure/rahul_bojja_ias.jpg
 DESCRIPTION=Principal Secretary to Government (FAC), Backward Classes Welfare Department.
 SOURCE_PAGE=
 
 ROLE=SECRETARY
 NAME=Sri B. Saidulu, IFS
 DESIGNATION=Secretary, MJPTBCWREIS
-IMAGE=
+IMAGE=assets/images/Infrastructure/secretary_sir.png
 DESCRIPTION=Secretary, MJPTBCWREIS.
 SOURCE_PAGE=
 

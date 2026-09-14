@@ -1,0 +1,19 @@
+﻿{
+    "collegeLife":  [
+
+                    ],
+    "campusLife":  [
+                       "assets/images/campus_life/campus-01.svg",
+                       "assets/images/campus_life/campus-02.svg",
+                       "assets/images/campus_life/campus-03.svg",
+                       "assets/images/campus_life/campus-04.svg"
+                   ],
+    "gallery":  [
+                    {
+                        "category":  "INFRASTRUCTURE",
+                        "files":  [
+                                      "assets/images/gallery/INFRASTRUCTURE/library1.jpg"
+                                  ]
+                    }
+                ]
+}

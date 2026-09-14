@@ -1,0 +1,9 @@
+name=CH. Poojitha
+occupation=Junior Assistant
+qualification=M. Sc (Applied Mathematics)
+experience=1 year 8 months
+
+name=Malga. Maneesha
+occupation=Junior Assistant, BC Welfare
+qualification=MBA (HR)
+experience=1 year 9 months

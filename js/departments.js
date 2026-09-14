@@ -18,5 +18,15 @@
     departmentPage.querySelectorAll(".department-tab").forEach(function (tab) { tab.addEventListener("click", function () { const panelId = tab.getAttribute("aria-controls"); departmentPage.querySelectorAll(".department-tab").forEach(function (item) { item.classList.toggle("is-active", item === tab); item.setAttribute("aria-selected", String(item === tab)); }); departmentPage.querySelectorAll(".department-panel").forEach(function (panel) { panel.hidden = panel.id !== panelId; panel.classList.toggle("is-active", panel.id === panelId); }); }); });
     const dismissModal = function () { if (modal) { modal.hidden = true; document.body.classList.remove("modal-open"); if (lastFocusedFacultyCard) lastFocusedFacultyCard.focus(); } }; if (closeModal) closeModal.addEventListener("click", dismissModal); if (modal) { modal.addEventListener("click", function (event) { if (event.target === modal) dismissModal(); }); document.addEventListener("keydown", function (event) { if (event.key === "Escape" && !modal.hidden) dismissModal(); }); }
     Site.loadData("data/faculty.txt", "text").then(function (text) { facultyRecords = parseFaculty(text); renderFaculty(); }).catch(function () { facultyRecords = []; renderFaculty(); });
+    const staffTable = document.getElementById("non-teaching-staff");
+    if (staffTable) Site.loadData("data/non_teaching_staff.txt", "text").then(function (text) {
+      const body = staffTable.querySelector("tbody"); body.replaceChildren();
+      Site.parseKeyValueBlocks(text).forEach(function (record) {
+        const row = document.createElement("tr");
+        ["name", "occupation", "qualification", "experience"].forEach(function (key) { const cell = document.createElement("td"); cell.textContent = record[key] || "Unavailable"; row.appendChild(cell); });
+        body.appendChild(row);
+      });
+      if (!body.children.length) body.innerHTML = "<tr><td colspan=\"4\">Non-teaching staff records are unavailable.</td></tr>";
+    }).catch(function () { staffTable.querySelector("tbody").innerHTML = "<tr><td colspan=\"4\">Non-teaching staff records are unavailable.</td></tr>"; });
   });
 })();

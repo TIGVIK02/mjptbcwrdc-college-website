@@ -26,6 +26,19 @@ Then open the local URL printed by the command.
 - Replace the placeholder URLs in `sitemap.xml` and `robots.txt` with the final HTTPS domain.
 - Test the contact email draft, navigation, notices, and downloads on a phone before deployment.
 
+## Media folders
+
+For local development, the gallery reads the directory listings exposed by the local static server on every page load. Add a category folder and supported files under `assets/images/gallery/`, then refresh the Gallery page; no HTML, JavaScript, JSON, or generation command is required.
+
+The generated media mapping can still be refreshed for static hosts that do not expose directory listings:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\tools\generate-media-manifests.ps1
+```
+
+The generated `data/media-manifest.json` drives the homepage carousels and is the Gallery fallback when runtime directory discovery is unavailable. Gallery categories are discovered from immediate subfolders; supported gallery files are JPG, JPEG, PNG, and PDF. Static hosting without directory listings cannot provide true refresh-only folder discovery, so it uses the last generated fallback mapping.
+
 ## Development input pipeline
 
 The site is intentionally static: there is no server, database, or filesystem API. The complete development workflow is available at `pages/development-data-lab.html` and uses explicit browser file selection, validation, parsing, IndexedDB storage, administrator edit/approval, and a public-preview renderer. This is a development harness, not a production admin panel.
@@ -47,7 +60,8 @@ Every standalone HTML page loads `js/script.js` first. That global file owns sha
 - `notices.js`: quick-notice ticker/list and document-notice rendering.
 - `departments.js`: department tabs, faculty filtering, and profiles.
 - `contact.js`: enquiry validation, development audit capture, and email draft preparation.
-- `gallery.js`: gallery lightbox.
+- `gallery.js`: generated gallery categories and the single image/PDF carousel.
+- `magazine.js`: annual magazine PDF directory discovery and archive rendering.
 - `result-analysis.js`: result-analysis data rendering.
 - `previous-year-question-papers.js`: PYQ directory-listing parsing and PDF actions.
 - `development-data-lab.js`: development-only file import, validation, review, and preview.

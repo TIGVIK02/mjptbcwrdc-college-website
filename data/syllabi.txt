@@ -1,0 +1,45 @@
+# One consolidated syllabus PDF per department. Leave a PDF field empty until an official file is available.
+department=Botany
+pdf=
+
+department=Chemistry
+pdf=
+
+department=Commerce
+pdf=
+
+department=Computer Science
+pdf=
+
+department=Economics
+pdf=
+
+department=English
+pdf=
+
+department=History
+pdf=
+
+department=Mathematics
+pdf=
+
+department=Physics
+pdf=
+
+department=Political Science
+pdf=
+
+department=Statistics
+pdf=
+
+department=Telugu
+pdf=
+
+department=Wellness
+pdf=
+
+department=Physical Education
+pdf=
+
+department=Zoology
+pdf=

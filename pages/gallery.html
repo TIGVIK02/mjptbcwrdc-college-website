@@ -12,18 +12,20 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="site-header"></div>
   <main id="main">
-    <div class="page-hero"><div class="container"><h2>GALLERY</h2><p>Campus photographs — replace these placeholders with Station Ghanpur images</p></div></div>
+    <div class="page-hero"><div class="container"><h2>GALLERY</h2><p>College life and campus photographs</p></div></div>
     <section class="section">
-      <div class="container gallery-grid">
-        <a class="gallery-placeholder" href="contact.html" aria-label="Add an authentic campus photograph">Campus photograph to be added</a>
-        <a class="gallery-placeholder" href="contact.html" aria-label="Add an authentic library photograph">Library photograph to be added</a>
-        <a class="gallery-placeholder" href="contact.html" aria-label="Add an authentic laboratory photograph">Laboratory photograph to be added</a>
-        <a class="gallery-placeholder" href="contact.html" aria-label="Add an authentic student-life photograph">Student-life photograph to be added</a>
+      <div class="container">
+        <div class="gallery-categories" id="gallery-categories" role="group" aria-label="Gallery categories"></div>
+        <div class="gallery-carousel carousel" id="gallery-carousel" tabindex="0" aria-roledescription="carousel" aria-label="Gallery images">
+          <div class="carousel-viewport"><div class="carousel-track" id="gallery-track"></div></div>
+          <button class="carousel-control carousel-prev" type="button" aria-label="Previous gallery item">←</button><button class="carousel-control carousel-next" type="button" aria-label="Next gallery item">→</button>
+        </div>
+        <p class="empty-state" id="gallery-status" hidden>No gallery categories are available.</p>
       </div>
     </section>
   </main>
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image preview"><img id="lightbox-img" alt=""></div>
   <div id="site-footer"></div>
   <script src="../js/script.js"></script>
+  <script src="../js/gallery.js?v=3"></script>
 </body>
 </html>

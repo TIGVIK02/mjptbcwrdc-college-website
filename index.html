@@ -24,10 +24,6 @@
       <div class="container hero-inner">
         <h2>LEARN, LIVE, AND GROW WITH PURPOSE.</h2>
         <p>Residential degree education in a supportive academic environment at Station Ghanpur, Pembarthy, Jangaon.</p>
-        <div class="hero-actions">
-          <a class="btn" href="pages/academics.html">EXPLORE ACADEMICS</a>
-          <a class="btn btn-outline" href="pages/vision-and-mission.html">ABOUT THE COLLEGE</a>
-        </div>
       </div>
     </section>
 
@@ -47,19 +43,20 @@
       </div>
     </section>
 
+    <div class="container carousel-actions">
+      <a class="btn" href="pages/academics.html">EXPLORE ACADEMICS</a>
+      <a class="btn btn-outline" href="pages/vision-and-mission.html">ABOUT THE COLLEGE</a>
+    </div>
+
     <section class="section carousel-section" aria-labelledby="carousel-title">
       <div class="container">
         <div class="section-head">
           <div><p class="eyebrow">A CLOSER LOOK</p><h2 id="carousel-title">COLLEGE LIFE IN FOCUS</h2></div>
-          <p class="muted carousel-note">Authentic college photographs can be placed in the campus image folders.</p>
+          <p class="muted carousel-note" data-media-status></p>
         </div>
-        <div class="carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="College image placeholders">
+        <div class="carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="College life images">
           <div class="carousel-viewport">
-            <div class="carousel-track">
-              <div class="carousel-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3"><div class="carousel-placeholder"><span>Campus photograph to be added</span><strong>Campus</strong></div></div>
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" hidden><div class="carousel-placeholder"><span>Academic activity photograph to be added</span><strong>Academic activities</strong></div></div>
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" hidden><div class="carousel-placeholder"><span>Residential facilities photograph to be added</span><strong>Residential facilities</strong></div></div>
-            </div>
+            <div class="carousel-track" data-media-track></div>
           </div>
           <button class="carousel-control carousel-prev" type="button" aria-label="Previous slide">←</button>
           <button class="carousel-control carousel-next" type="button" aria-label="Next slide">→</button>
@@ -69,7 +66,7 @@
 
     <section class="section strength-section" aria-labelledby="strength-title">
       <div class="container">
-        <div class="section-head"><div><p class="eyebrow">CURRENT STUDENT STRENGTH</p><h2 id="strength-title">ADMISSIONS AT A GLANCE</h2></div><p class="muted">Current student/admission strength by academic year.</p></div>
+        <div class="section-head"><div><p class="eyebrow">CURRENT STUDENT STRENGTH</p><h2 id="strength-title">ADMISSIONS AT A GLANCE</h2></div></div>
         <div id="student-strength" class="strength-grid" aria-live="polite" aria-busy="true"></div>
       </div>
     </section>
@@ -94,13 +91,8 @@
           <h2>RESIDENTIAL SUPPORT FOR STUDENT LIFE.</h2>
           <p class="muted">Explore the facilities and student-life information currently available. Campus photographs and further details can be added as authentic college material becomes available.</p>
         </div>
-        <div class="campus-life-carousel carousel" data-campus-carousel tabindex="0" aria-roledescription="carousel" aria-label="Campus life placeholder images">
-          <div class="carousel-viewport"><div class="carousel-track">
-            <div class="carousel-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4"><img src="assets/images/campus_life/campus-01.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 4" hidden><img src="assets/images/campus_life/campus-02.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" hidden><img src="assets/images/campus_life/campus-03.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 4" hidden><img src="assets/images/campus_life/campus-04.svg" alt="Temporary campus life placeholder image" loading="lazy"></div>
-          </div></div>
+        <div class="campus-life-carousel carousel" data-campus-carousel tabindex="0" aria-roledescription="carousel" aria-label="Campus life images">
+          <div class="carousel-viewport"><div class="carousel-track" data-media-track></div></div>
           <button class="carousel-control carousel-prev" type="button" aria-label="Previous campus image">←</button><button class="carousel-control carousel-next" type="button" aria-label="Next campus image">→</button>
         </div>
         <div class="campus-links"><a class="panel-link" href="pages/facilities.html"><strong>FACILITIES</strong><span>Residential support and student provisions <span aria-hidden="true">→</span></span></a><a class="panel-link" href="pages/student-zone.html"><strong>STUDENT ZONE</strong><span>Student information and support <span aria-hidden="true">→</span></span></a></div>

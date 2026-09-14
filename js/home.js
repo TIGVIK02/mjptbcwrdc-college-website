@@ -4,7 +4,7 @@
 
   Site.onReady(function () {
     const pageBase = Site.pageBase;
-    const initializeCarousel = function (carousel, interval) {
+    const initializeCarousel = function (carousel, interval, initialIndex) {
       if (!carousel) return;
       const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
       if (!slides.length) return;
@@ -18,7 +18,19 @@
       carousel.addEventListener("mouseenter", stop); carousel.addEventListener("mouseleave", start); carousel.addEventListener("focusin", stop); carousel.addEventListener("focusout", function (event) { if (!carousel.contains(event.relatedTarget)) start(); });
       carousel.addEventListener("keydown", function (event) { if (event.key === "ArrowLeft") { showSlide(current - 1); start(); } if (event.key === "ArrowRight") { showSlide(current + 1); start(); } });
       carousel.addEventListener("touchstart", function (event) { touchStartX = event.changedTouches[0].clientX; stop(); }, { passive: true }); carousel.addEventListener("touchend", function (event) { const distance = event.changedTouches[0].clientX - touchStartX; if (Math.abs(distance) > 40) showSlide(current + (distance < 0 ? 1 : -1)); start(); }, { passive: true });
-      showSlide(0); start();
+      showSlide(Number.isInteger(initialIndex) ? initialIndex : 0); start();
+    };
+    const renderMediaCarousel = function (carousel, media, emptyMessage) {
+      if (!carousel) return;
+      const track = carousel.querySelector("[data-media-track]");
+      if (!track) return;
+      track.replaceChildren();
+      media.forEach(function (item, index) {
+        const slide = document.createElement("div"); slide.className = "carousel-slide"; slide.setAttribute("role", "group"); slide.setAttribute("aria-roledescription", "slide"); slide.setAttribute("aria-label", index + 1 + " of " + media.length); slide.hidden = index !== 0;
+        const image = document.createElement("img"); image.src = pageBase + item.path; image.alt = item.alt || "College life photograph"; image.loading = "lazy"; slide.appendChild(image); track.appendChild(slide);
+      });
+      if (!media.length) { const slide = document.createElement("div"); slide.className = "carousel-slide is-active"; slide.setAttribute("role", "group"); slide.appendChild(Object.assign(document.createElement("p"), { className: "empty-state", textContent: emptyMessage })); track.appendChild(slide); }
+      initializeCarousel(carousel, carousel.hasAttribute("data-campus-carousel") ? 5500 : 5000, media.length ? Math.floor(Math.random() * media.length) : 0);
     };
 
     const leadershipMount = document.getElementById("leadership-grid");
@@ -59,7 +71,14 @@
       strengthMount.setAttribute("aria-busy", "false");
     }).catch(function () { strengthMount.setAttribute("aria-busy", "false"); strengthMount.innerHTML = "<p class=\"empty-state\">Current student strength is unavailable.</p>"; });
 
-    initializeCarousel(document.querySelector("[data-carousel]"), 5000);
-    initializeCarousel(document.querySelector("[data-campus-carousel]"), 5500);
+    Site.loadData("data/media-manifest.json", "json").then(function (manifest) {
+      const collegeMedia = (manifest.collegeLife || []).map(function (path) { return { path: path, alt: "College life photograph" }; });
+      const campusMedia = (manifest.campusLife || []).map(function (path) { return { path: path, alt: "Campus life photograph" }; });
+      renderMediaCarousel(document.querySelector("[data-carousel]"), collegeMedia, "College life images will be added here when available.");
+      renderMediaCarousel(document.querySelector("[data-campus-carousel]"), campusMedia, "Campus life images will be added here when available.");
+    }).catch(function () {
+      renderMediaCarousel(document.querySelector("[data-carousel]"), [], "College life images are currently unavailable.");
+      renderMediaCarousel(document.querySelector("[data-campus-carousel]"), [], "Campus life images are currently unavailable.");
+    });
   });
 })();
