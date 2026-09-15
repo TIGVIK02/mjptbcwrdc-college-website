@@ -1,0 +1,42 @@
+STATIC CONTENT BUILD REPORT
+========================================================================
+Build started:   2026-09-15T20:26:42.754217+00:00
+Build completed: 2026-09-15T20:26:43.295511+00:00
+Mode: BUILD
+
+BUILD SUMMARY
+------------------------------------------------------------------------
+Files scanned: 5
+JSON files found: 5
+JSON files generated: 3
+JSON files updated: 0
+JSON files unchanged: 3
+Warnings: 1
+Errors: 0
+
+GENERATED OUTPUTS
+------------------------------------------------------------------------
+UNCHANGED: assets/notice_files/pdf-notices.txt
+UNCHANGED: data/magazine.json
+UNCHANGED: data/media-manifest.json
+UNCHANGED: data/pyq.json
+
+JSON FILE AUDIT
+------------------------------------------------------------------------
+.vscode/settings.json | EXTERNAL | VALID | NOT MODIFIED | editor configuration
+data/magazine.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
+data/media-manifest.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
+data/pyq.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
+website raw data/timetable_output/timetable_manifest.json | GENERATED | VALID | NOT MODIFIED | website raw data/generate_timetables.py
+
+UNSUPPORTED FILES
+------------------------------------------------------------------------
+None detected.
+
+WARNINGS
+------------------------------------------------------------------------
+TIMETABLES: delegated generator reported 3 warning(s)
+
+ERRORS / BROKEN REFERENCES
+------------------------------------------------------------------------
+None.

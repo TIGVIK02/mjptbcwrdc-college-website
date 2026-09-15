@@ -473,7 +473,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .carousel-viewport { aspect-ratio: 16 / 7; min-height: 260px; }
 .carousel-track { display: flex; height: 100%; transition: transform 500ms ease; }
 .carousel-slide { flex: 0 0 100%; height: 100%; }
-.carousel-slide[aria-hidden="true"] { visibility: hidden; }
 .carousel-placeholder { height: 100%; display: flex; flex-direction: column; justify-content: end; align-items: start; padding: clamp(1.5rem, 5vw, 4rem); color: white; background: linear-gradient(120deg, #153d5c, #6b5b32); }
 .carousel-slide:nth-child(2) .carousel-placeholder { background: linear-gradient(120deg, #315d63, #19344d); }
 .carousel-slide:nth-child(3) .carousel-placeholder { background: linear-gradient(120deg, #6b5b32, #3f536c); }

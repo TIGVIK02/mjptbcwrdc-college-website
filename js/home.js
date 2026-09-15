@@ -9,7 +9,7 @@
       const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
       if (!slides.length) return;
       let current = 0; let timer; let touchStartX = 0; const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const showSlide = function (index) { current = (index + slides.length) % slides.length; const track = carousel.querySelector(".carousel-track"); if (track) track.style.transform = "translateX(-" + current * 100 + "%)"; slides.forEach(function (slide, slideIndex) { const active = slideIndex === current; slide.classList.toggle("is-active", active); slide.hidden = !active; slide.setAttribute("aria-hidden", String(!active)); }); };
+      const showSlide = function (index) { current = (index + slides.length) % slides.length; const track = carousel.querySelector(".carousel-track"); if (track) track.style.transform = "translateX(-" + current * 100 + "%)"; slides.forEach(function (slide, slideIndex) { const active = slideIndex === current; slide.classList.toggle("is-active", active); slide.hidden = false; slide.setAttribute("aria-hidden", String(!active)); }); };
       const stop = function () { window.clearInterval(timer); };
       const start = function () { stop(); if (!reducedMotion && slides.length > 1) timer = window.setInterval(function () { showSlide(current + 1); }, interval); };
       const previous = carousel.querySelector(".carousel-prev"); const next = carousel.querySelector(".carousel-next");
@@ -26,7 +26,7 @@
       if (!track) return;
       track.replaceChildren();
       media.forEach(function (item, index) {
-        const slide = document.createElement("div"); slide.className = "carousel-slide"; slide.setAttribute("role", "group"); slide.setAttribute("aria-roledescription", "slide"); slide.setAttribute("aria-label", index + 1 + " of " + media.length); slide.hidden = index !== 0;
+        const slide = document.createElement("div"); slide.className = "carousel-slide"; slide.setAttribute("role", "group"); slide.setAttribute("aria-roledescription", "slide"); slide.setAttribute("aria-label", index + 1 + " of " + media.length);
         const image = document.createElement("img"); image.src = pageBase + item.path; image.alt = item.alt || "College life photograph"; image.loading = "lazy"; slide.appendChild(image); track.appendChild(slide);
       });
       if (!media.length) { const slide = document.createElement("div"); slide.className = "carousel-slide is-active"; slide.setAttribute("role", "group"); slide.appendChild(Object.assign(document.createElement("p"), { className: "empty-state", textContent: emptyMessage })); track.appendChild(slide); }
@@ -39,7 +39,7 @@
         const records = Site.parseKeyValueBlocks(text).filter(function (record) { return (record.ROLE || "").toLowerCase() !== "principal"; });
         leadershipMount.replaceChildren();
         records.forEach(function (record, index) {
-          const slide = document.createElement("article"); slide.className = "carousel-slide leadership-slide"; slide.setAttribute("role", "group"); slide.setAttribute("aria-roledescription", "slide"); slide.setAttribute("aria-label", index + 1 + " of " + records.length); slide.hidden = index !== 0;
+          const slide = document.createElement("article"); slide.className = "carousel-slide leadership-slide"; slide.setAttribute("role", "group"); slide.setAttribute("aria-roledescription", "slide"); slide.setAttribute("aria-label", index + 1 + " of " + records.length);
           const portrait = document.createElement("div"); portrait.className = "leadership-portrait";
           if (record.IMAGE) { const image = document.createElement("img"); image.src = pageBase + record.IMAGE; image.alt = "Official portrait of " + (record.NAME || record.ROLE); image.onerror = function () { image.remove(); portrait.classList.add("is-placeholder"); }; portrait.appendChild(image); } else { portrait.classList.add("is-placeholder"); const label = document.createElement("span"); label.textContent = "OFFICIAL IMAGE TO BE UPDATED"; portrait.appendChild(label); }
           const copy = document.createElement("div"); copy.className = "leadership-copy"; const role = document.createElement("p"); role.className = "eyebrow"; role.textContent = record.ROLE || "LEADERSHIP"; const name = document.createElement("h3"); name.textContent = record.NAME || "Information to be updated"; const designation = document.createElement("p"); designation.className = "leadership-designation"; designation.textContent = record.DESIGNATION || "Information to be updated"; const message = document.createElement("p"); message.className = "leadership-message"; message.textContent = record.DESCRIPTION || record.MESSAGE || "Institutional leadership information."; copy.append(role, name, designation, message); slide.append(portrait, copy); leadershipMount.appendChild(slide);

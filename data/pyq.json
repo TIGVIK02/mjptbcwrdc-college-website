@@ -5,13 +5,28 @@
     "pdf": "assets/pyq/CHEMISTRY.pdf"
   },
   {
+    "title": "chemistry Internal",
+    "year": null,
+    "pdf": "assets/pyq/chemistry Internal.pdf"
+  },
+  {
     "title": "ECONOMICS",
     "year": null,
     "pdf": "assets/pyq/ECONOMICS.pdf"
   },
   {
+    "title": "Economics Internal",
+    "year": null,
+    "pdf": "assets/pyq/Economics Internal.pdf"
+  },
+  {
     "title": "TELUGU",
     "year": null,
     "pdf": "assets/pyq/TELUGU.pdf"
+  },
+  {
+    "title": "Telugu Internal",
+    "year": null,
+    "pdf": "assets/pyq/Telugu Internal.pdf"
   }
 ]

@@ -1,5 +1,10 @@
 {
-  "collegeLife": [],
+  "collegeLife": [
+    "assets/images/college_life_in_focus/Afternoon Meal.jpg",
+    "assets/images/college_life_in_focus/Classroom1.jpg",
+    "assets/images/college_life_in_focus/classroom2.jpg",
+    "assets/images/college_life_in_focus/library_ReadingArea.jpg"
+  ],
   "campusLife": [
     "assets/images/campus_life/campus-01.svg",
     "assets/images/campus_life/campus-02.svg",

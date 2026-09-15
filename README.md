@@ -31,10 +31,18 @@ Then open the local URL printed by the command.
 Folder-backed content is discovered by one project-wide build step. Add, remove, or rename files in the source folders, then run:
 
 ```powershell
-python .\tools\build_content.py
+python .\build_content.py
 ```
 
-The build discovers PYQ PDFs, Magazine PDFs, homepage/gallery media, document notices, and generated timetables, then writes committed manifests and outputs for GitHub Pages. Gallery categories are discovered from immediate subfolders; supported gallery files are JPG, JPEG, PNG, and PDF.
+For local development, keep the PYQ manifest updated automatically while adding or removing PDFs:
+
+```powershell
+.\tools\watch_content.ps1
+```
+
+The watcher updates `data/pyq.json` whenever the contents of `assets/pyq` change. The generated JSON and PDF files must still be deployed together for the public static site to update.
+
+The build discovers PYQ PDFs, Magazine PDFs, homepage/gallery media, document notices, and generated timetables, then writes committed manifests and outputs for GitHub Pages. Gallery categories are discovered from immediate subfolders; supported gallery files are JPG, JPEG, PNG, and PDF. `tools/build_content.py` remains a compatibility wrapper for older commands.
 
 ## Development input pipeline
 
@@ -45,7 +53,7 @@ Development fixtures live separately in `dev-samples/` and are clearly fictional
 Input contracts:
 
 - Public notices read `assets/notice_files/quick-notices.txt` and `assets/notice_files/pdf-notices.txt`; document PDFs remain in `assets/notice_files/`.
-- Public student, faculty, result, PYQ, Magazine, and Gallery views read committed files under `data/`. Folder-backed PDFs/media are discovered by `tools/build_content.py`, not by browser directory enumeration.
+- Public student, faculty, result, PYQ, Magazine, and Gallery views read committed files under `data/`. Folder-backed PDFs/media are discovered by `build_content.py`, not by browser directory enumeration.
 - The contact form validates the enquiry, records a development-only audit entry in IndexedDB, and opens the user's email client for final review and sending.
 - When a backend is introduced, replace the IndexedDB adapter in `js/development-data-lab.js` with authenticated upload/API calls and server-side validation; keep the same parsed record contracts and review states.
 
