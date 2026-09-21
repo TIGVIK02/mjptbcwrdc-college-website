@@ -17,6 +17,42 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 ASSETS = ROOT / "assets"
 REPORT_PATH = ROOT / "content_build_report.txt"
+PRODUCTION_SITE_URL = "https://www.mjptbcwrdc.in/"
+INDEXABLE_PAGES = [
+    "index.html",
+    "pages/academics.html",
+    "pages/admissions.html",
+    "pages/attendance-code-of-conduct.html",
+    "pages/cells.html",
+    "pages/centre-for-excellence.html",
+    "pages/clubs.html",
+    "pages/committees.html",
+    "pages/contact.html",
+    "pages/departments.html",
+    "pages/downloads.html",
+    "pages/events.html",
+    "pages/facilities.html",
+    "pages/gallery.html",
+    "pages/grievance-cell.html",
+    "pages/infrastructure.html",
+    "pages/magazine-newsletter.html",
+    "pages/magazine.html",
+    "pages/notices.html",
+    "pages/nss.html",
+    "pages/our-services.html",
+    "pages/previous-year-question-papers.html",
+    "pages/principal.html",
+    "pages/result-analysis.html",
+    "pages/student-achievements.html",
+    "pages/student-educational-verification.html",
+    "pages/student-placement.html",
+    "pages/student-placements.html",
+    "pages/student-support.html",
+    "pages/student-zone.html",
+    "pages/syllabi.html",
+    "pages/timetable.html",
+    "pages/vision-and-mission.html",
+]
 SUPPORTED_MEDIA = {".jpg", ".jpeg", ".png", ".pdf"}
 HOME_EXTENSIONS = SUPPORTED_MEDIA | {".svg", ".webp"}
 IGNORED_DIRS = {".git", ".github", ".venv", "node_modules", "__pycache__"}
@@ -120,7 +156,38 @@ GENERATORS: dict[str, Callable[[], Any]] = {
     "data/magazine.json": lambda: build_pdf_manifest("magazine"),
 }
 
-GENERATED_TEXT = {"assets/notice_files/pdf-notices.txt": build_notice_metadata}
+
+def build_sitemap() -> str:
+    urls = []
+    for page in INDEXABLE_PAGES:
+        if (ROOT / page).is_file():
+            urls.append(f"  <url><loc>{PRODUCTION_SITE_URL.rstrip('/')}" + ('' if page == 'index.html' else '/' + page) + "</loc></url>")
+    return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
+
+
+def build_robots() -> str:
+    return "User-agent: *\nAllow: /\n\nSitemap: " + PRODUCTION_SITE_URL + "sitemap.xml\n"
+
+
+def build_webmanifest() -> str:
+    return json.dumps({
+        "name": "MJPTBCWRDC(W), Station Ghanpur",
+        "short_name": "MJPTBCWRDC(W)",
+        "description": "Official website of Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Degree College for Women, Station Ghanpur.",
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#f7f4ee",
+        "theme_color": "#0b2540",
+        "icons": [{"src": "/assets/images/logo/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}],
+    }, ensure_ascii=False, indent=2) + "\n"
+
+
+GENERATED_TEXT = {
+    "assets/notice_files/pdf-notices.txt": build_notice_metadata,
+    "sitemap.xml": build_sitemap,
+    "robots.txt": build_robots,
+    "site.webmanifest": build_webmanifest,
+}
 
 
 def json_text(value: Any) -> str:

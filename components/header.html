@@ -1,17 +1,34 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <div class="topbar">
-  <div class="container">
-     <div class="topbar-links">
-      <a href="__BASE__pages/grievance-cell.html">Grievance Cell</a>
-      <a data-config-href="phone" data-config-text="phone" href="tel:7013310928">+91 7013310928</a>
+  <div class="container topbar-inner">
+    <div class="topbar-links">
+      <a href="__BASE__pages/notices.html">NOTICES</a>
+      <a href="__BASE__pages/downloads.html">DOWNLOADS</a>
+      <a href="__BASE__pages/contact.html">CONTACT</a>
+      <a data-config-href="phone" data-config-text="phone" href="tel:+917032765139">PHONE</a>
+      <button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search" aria-label="Open website search">
+        <span aria-hidden="true">⌕</span>
+      </button>
     </div>
+  </div>
+</div>
+<div class="site-search-panel" id="site-search" hidden>
+  <div class="container search-panel-inner">
+    <form class="site-search" role="search" aria-label="Search the college website">
+      <label class="sr-only" for="site-search-input">Search the college website</label>
+      <input id="site-search-input" type="search" name="query" placeholder="Search the college website" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
   </div>
 </div>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="__BASE__index.html">
-      <img src="__BASE__assets/images/logo/logo.png" alt="MJPTBCWRDC(W) logo">
+    <a class="brand" href="__BASE__index.html" aria-label="MJPTBCWRDC(W) home page">
+      <img src="__BASE__assets/images/logo/logo.png" alt="MJPTBCWRDC(W) college emblem and logo">
       <div class="brand-text">
-        <p class="college-name"><span data-config-text="headerLine1">Mahatma Jyothiba Phule</span><br><span data-config-text="headerLine2">Telangana Backward Classes</span><br><span data-config-text="headerLine3">Welfare Residential Degree College for Women</span></p>
+        <span class="college-name"><span data-config-text="headerLine1">Mahatma Jyothiba Phule</span><span data-config-text="headerLine2">Telangana Backward Classes</span><span data-config-text="headerLine3">Welfare Residential Degree College for Women</span></span>
+        <span class="college-location" data-config-text="location">Station Ghanpur · Women</span>
+        <span class="college-affiliation">Affiliated to <span data-config-text="affiliation">Kakatiya University</span></span>
       </div>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
@@ -22,7 +39,7 @@
         <div class="nav-panel-head"><p>Explore the college</p><button class="nav-close" type="button" aria-label="Close menu">&times;</button></div>
         <div class="nav-groups">
           <div class="nav-group">
-            <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-about-menu">ABOUT US</button></h2>
+            <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-about-menu">ABOUT</button></h2>
             <div class="nav-submenu" id="nav-about-menu" hidden>
               <a href="__BASE__pages/vision-and-mission.html">VISION AND MISSION</a><a href="__BASE__pages/principal.html">PRINCIPAL</a>
             </div>
@@ -36,12 +53,17 @@
           <div class="nav-group">
             <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-campus-menu">CAMPUS</button></h2>
             <div class="nav-submenu" id="nav-campus-menu" hidden>
-              <a href="__BASE__pages/facilities.html">FACILITIES</a><a href="__BASE__pages/infrastructure.html">INFRASTRUCTURE</a><a href="__BASE__pages/student-zone.html">STUDENT ZONE</a><a href="__BASE__pages/events.html">EVENTS</a>
+              <a href="__BASE__pages/facilities.html">FACILITIES</a><a href="__BASE__pages/infrastructure.html">INFRASTRUCTURE</a><a href="__BASE__pages/events.html">EVENTS</a>
             </div>
           </div>
-          <a class="nav-major-link" href="__BASE__pages/contact.html">CONTACT US</a>
           <div class="nav-group">
-            <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-examination-menu">EXAMINATION BRANCH</button></h2>
+            <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-student-menu">STUDENT ZONE</button></h2>
+            <div class="nav-submenu" id="nav-student-menu" hidden>
+              <a href="__BASE__pages/student-zone.html">STUDENT ZONE</a><a href="__BASE__pages/student-achievements.html">STUDENT ACHIEVEMENTS</a><a href="__BASE__pages/student-placements.html">STUDENT PLACEMENTS</a><a href="__BASE__pages/cells.html">CELLS</a><a href="__BASE__pages/committees.html">COMMITTEES</a><a href="__BASE__pages/magazine.html">MAGAZINE</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-examination-menu">EXAMINATION</button></h2>
             <div class="nav-submenu" id="nav-examination-menu" hidden>
               <a href="__BASE__pages/result-analysis.html">RESULT ANALYSIS</a><a href="__BASE__pages/previous-year-question-papers.html">PREVIOUS YEAR QUESTION PAPERS</a>
             </div>
@@ -50,7 +72,7 @@
           <div class="nav-group">
             <h2><button class="nav-group-toggle" type="button" aria-expanded="false" aria-controls="nav-discover-menu">DISCOVER</button></h2>
             <div class="nav-submenu" id="nav-discover-menu" hidden>
-              <a href="__BASE__pages/gallery.html">GALLERY</a><a href="__BASE__pages/magazine.html">MAGAZINE</a><a href="__BASE__pages/downloads.html">DOWNLOADS</a>
+              <a href="__BASE__pages/gallery.html">GALLERY</a><a href="__BASE__pages/downloads.html">DOWNLOADS</a>
             </div>
           </div>
         </div>

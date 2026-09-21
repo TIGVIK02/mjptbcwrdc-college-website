@@ -1,5 +1,18 @@
 (function () {
   "use strict";
+
+  const allowLocalDevAccess = function () {
+    const host = window.location.hostname.toLowerCase();
+    const isLocalHost = ["localhost", "127.0.0.1", "::1", "[::1]"].includes(host);
+    const devOverride = new URLSearchParams(window.location.search).get("dev") === "1";
+    return isLocalHost || devOverride;
+  };
+
+  if (!allowLocalDevAccess()) {
+    window.location.replace("../index.html");
+    return;
+  }
+
   const databaseName = "mjptbcwrdcw-development";
   const storeName = "imports";
   const requiredFields = {

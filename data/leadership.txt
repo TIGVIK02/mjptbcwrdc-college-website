@@ -1,43 +1,44 @@
-# Leadership records for the homepage. IMAGE paths are local copies; SOURCE_PAGE and SOURCE_IMAGE document verified origins when available.
-ROLE=HON'BLE CHIEF MINISTER
-NAME=Sri Anumula Revanth Reddy
-DESIGNATION=Chief Minister, Government of Telangana
-IMAGE=assets/images/leadership/chief-minister.png
-DESCRIPTION=Chief Minister of Telangana and institutional leadership for quality education and student welfare.
-SOURCE_PAGE=https://mjptbcwreis.telangana.gov.in/
-SOURCE_IMAGE=https://mjptbcwreis.telangana.gov.in/assets/images/CM-card.png
-
+# Leadership records for the homepage.
 ROLE=HON'BLE BC WELFARE MINISTER
 NAME=Sri Ponnam Prabhakar
-DESIGNATION=Minister for Backward Classes Welfare, Government of Telangana
+DESIGNATION=Minister for Transport & BC Welfare
+Government of Telangana
 IMAGE=assets/images/leadership/bc-welfare-minister.png
-DESCRIPTION=Minister responsible for Backward Classes Welfare and the institutions serving its students.
-SOURCE_PAGE=https://mjptbcwreis.telangana.gov.in/
-SOURCE_IMAGE=https://mjptbcwreis.telangana.gov.in/assets/images/minister.png
+DESCRIPTION=It gives me immense pleasure to present the Academic Calendar for the Academic Year 2026–27, brought out by the Telangana Backward Classes Welfare Mahatma Jyothiba Phule Residential Educational Institutions Society (MJPTBCWREIS). This calendar serves as a comprehensive guide for the smooth functioning of our Residential Schools, Junior Colleges, and Degree Colleges across the state.
 
-ROLE=PRINCIPAL SECRETARY
-NAME=Sri Rahul Bojja, IAS
-DESIGNATION=Principal Secretary to Government (FAC), Backward Classes Welfare Department
-IMAGE=assets/images/Infrastructure/rahul_bojja_ias.jpg
-DESCRIPTION=Principal Secretary to Government (FAC), Backward Classes Welfare Department.
-SOURCE_PAGE=
+It outlines key academic schedules, examinations, vacations, and celebrations, while reflecting the Society’s commitment to providing holistic education to students from backward classes. With the continued support of the Government of Telangana, our institutions offer quality education, safe residential facilities, and nutritious food-fostering an environment where every child can thrive.
+
+I urge all teaching and non-teaching staff to remain dedicated to nurturing young minds, and encourage students to pursue excellence in academics, co-curricular, and extracurricular activities.
+
+Let us work together to empower our students and help them realize their full potential. With best wishes for a successful and enriching academic year 2026–27.
+
+ROLE=PRINCIPAL SECRETARY (FAC)
+NAME=Smt. Bala Mayadevi, IAS.
+DESIGNATION=Principal Secretary (FAC)
+Commissioner, BC Welfare Dept.,
+Government of Telangana
+IMAGE=assets/images/leadership/Bala_Mayadevi.png
+DESCRIPTION=It gives me great pleasure to extend my warm wishes to all our students, teachers, parents, and staff through the Academic Calendar for the Academic Year 2026–27 of the Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Educational Institutions Society (MJPTBCWREIS).
+
+This Academic Calendar serves as a guide for the systematic planning and smooth implementation of academic and co-curricular activities across our Residential Schools, Junior Colleges, and Degree Colleges. It reflects our commitment to academic excellence, discipline, and the holistic development of every student.
+
+With the continued support of the Government of Telangana, MJPTBCWREIS remains dedicated to providing quality education, a safe residential environment, and opportunities that help students grow into confident, responsible, and successful individuals.
+
+I sincerely appreciate the dedication of our Principals, teachers, and staff, and encourage every student to make the best use of the opportunities available and strive for excellence in all aspects of life.
+
+I wish everyone a successful, enriching, and rewarding Academic Year 2026–27.
 
 ROLE=SECRETARY
-NAME=Sri B. Saidulu, IFS
-DESIGNATION=Secretary, MJPTBCWREIS
-IMAGE=assets/images/Infrastructure/secretary_sir.png
-DESCRIPTION=Secretary, MJPTBCWREIS.
-SOURCE_PAGE=
+NAME=Sri. B. Saidulu, IFS
+DESIGNATION=Secretary
+MJPTBCWREIS, HYD.
+IMAGE=assets/images/leadership/B_Saidulu.png
+DESCRIPTION=It is with great pride and satisfaction that I present the Academic Calendar for the year 2026–27 of the Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Educational Institutions Society (MJPTBCWREIS). This calendar outlines the academic framework and operational schedule for our Schools, Junior Colleges, and Degree Colleges across the state.
 
-ROLE=RCO
-NAME=Information to be updated
-DESIGNATION=Regional Coordinator Officer / RCO, MJPTBCWREIS
-IMAGE=
-DESCRIPTION=Regional Coordinating Officer / RCO, MJPTBCWREIS. Verified local identity and photograph to be supplied.
-SOURCE_PAGE=
+Designed to provide clarity and structure, the calendar serves as a valuable guide for students, parents, faculty, and administrators. It details working days, holidays, examinations, academic activities, celebrations, and key events—facilitating effective planning and coordination.
 
-ROLE=PRINCIPAL
-NAME=Dr. K. Bhagyalaxmi
-DESIGNATION=Principal, MJPTBCWRDC(W), Station Ghanpur
-IMAGE=assets/images/principal-placeholder.svg
-DESCRIPTION=Leads the college's academic environment and residential student support.
+With the continued support of the Government of Telangana, MJPTBCWREIS remains committed to empowering students from backward classes through quality education, robust infrastructure, nutritious meals, and a safe residential environment. Our mission is to foster academic excellence, character building, and holistic development.
+
+I sincerely appreciate the unwavering efforts of our Principals, faculty, and staff, and urge them to continue inspiring students toward excellence in all spheres.
+
+Wishing everyone a productive and enriching academic year 2026–27.

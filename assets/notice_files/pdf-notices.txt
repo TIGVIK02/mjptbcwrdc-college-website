@@ -1,3 +1,8 @@
 TITLE=sample-admission-notice
 PDF=sample-admission-notice.pdf
 
+TITLE=Almanac for UG I-semester
+PDF=Almanac_for_UG_I-semester.pdf
+
+TITLE=Almanac for UG III Sem & V Sem
+PDF=Almanac_for_UG_III_Sem_&_V_Sem.pdf

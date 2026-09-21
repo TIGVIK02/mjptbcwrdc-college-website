@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add the final HTTPS sitemap URL here before publishing.
+Sitemap: https://www.mjptbcwrdc.in/sitemap.xml

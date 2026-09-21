@@ -33,10 +33,39 @@
       initializeCarousel(carousel, carousel.hasAttribute("data-campus-carousel") ? 5500 : 5000, media.length ? Math.floor(Math.random() * media.length) : 0);
     };
 
+    const requiredLeadershipNames = [
+      "Sri Ponnam Prabhakar",
+      "Smt. Bala Mayadevi, IAS.",
+      "Sri. B. Saidulu, IFS"
+    ];
+    const validateLeadershipRecords = function (records) {
+      if (!Array.isArray(records) || records.length !== requiredLeadershipNames.length) {
+        throw new Error("Leadership validation failed: expected 3 records, found " + (records ? records.length : 0) + ".");
+      }
+      requiredLeadershipNames.forEach(function (requiredName, index) {
+        const actualName = (records[index] && records[index].NAME) ? records[index].NAME.trim() : "";
+        if (actualName !== requiredName) {
+          throw new Error("Leadership validation failed: expected '" + requiredName + "' at index " + index + ", found '" + actualName + "'.");
+        }
+      });
+      return records;
+    };
+
     const leadershipMount = document.getElementById("leadership-grid");
     if (leadershipMount) {
       Site.loadData("data/leadership.txt", "text").then(function (text) {
-        const records = Site.parseKeyValueBlocks(text).filter(function (record) { return (record.ROLE || "").toLowerCase() !== "principal"; });
+        const parsedRecords = Site.parseKeyValueBlocks(text).filter(function (record) { return (record.NAME || "").trim() && (record.ROLE || "").toLowerCase() !== "principal"; });
+        const byName = {};
+        parsedRecords.forEach(function (record) {
+          const name = (record.NAME || "").trim();
+          if (name) byName[name] = record;
+        });
+        const records = validateLeadershipRecords(requiredLeadershipNames.map(function (name) {
+          if (!byName[name]) {
+            throw new Error("Leadership validation failed: missing required record '" + name + "'.");
+          }
+          return byName[name];
+        }));
         leadershipMount.replaceChildren();
         records.forEach(function (record, index) {
           const slide = document.createElement("article"); slide.className = "carousel-slide leadership-slide"; slide.setAttribute("role", "group"); slide.setAttribute("aria-roledescription", "slide"); slide.setAttribute("aria-label", index + 1 + " of " + records.length);
@@ -45,7 +74,10 @@
           const copy = document.createElement("div"); copy.className = "leadership-copy"; const role = document.createElement("p"); role.className = "eyebrow"; role.textContent = record.ROLE || "LEADERSHIP"; const name = document.createElement("h3"); name.textContent = record.NAME || "Information to be updated"; const designation = document.createElement("p"); designation.className = "leadership-designation"; designation.textContent = record.DESIGNATION || "Information to be updated"; const message = document.createElement("p"); message.className = "leadership-message"; message.textContent = record.DESCRIPTION || record.MESSAGE || "Institutional leadership information."; copy.append(role, name, designation, message); slide.append(portrait, copy); leadershipMount.appendChild(slide);
         });
         initializeCarousel(document.querySelector("[data-leadership-carousel]"), 6000);
-      }).catch(function () { leadershipMount.innerHTML = "<div class=\"carousel-slide\"><p class=\"empty-state\">Leadership information is temporarily unavailable.</p></div>"; });
+      }).catch(function (error) {
+        console.error(error);
+        leadershipMount.innerHTML = "<div class=\"carousel-slide\"><p class=\"empty-state\">Leadership information is temporarily unavailable.</p></div>";
+      });
     }
 
     const strengthMount = document.getElementById("student-strength");

@@ -15,7 +15,7 @@
     secretary: "B. Saidulu, IFS",
     officeAddress: "Masab Tank, Hyderabad",
     principal: "Dr. K. Bhagyalaxmi",
-    phone: "+91 7013310928",
+    phone: "+91 7032765139",
     email: "mjptbcwrdcstationghanpurwomen@gmail.com",
     officeHours: "8:00 a.m. to 4:30 p.m.",
     copyrightText: "MJPTBCWRDC(W), Station Ghanpur"
@@ -26,11 +26,48 @@
   let backToTopInitialized = false;
   const readyCallbacks = [];
   const parseKeyValueBlocks = function (text) {
-    return text.split(/\r?\n\s*\r?\n/).map(function (block) {
-      const record = {};
-      block.split(/\r?\n/).forEach(function (line) { const separator = line.indexOf("="); if (separator > 0 && !line.trim().startsWith("#")) record[line.slice(0, separator).trim()] = line.slice(separator + 1).trim(); });
-      return record;
-    }).filter(function (record) { return Object.keys(record).length; });
+    const records = [];
+    let currentRecord = null;
+    let currentKey = null;
+
+    const finalizeCurrentRecord = function () {
+      if (currentRecord && Object.keys(currentRecord).length) {
+        records.push(currentRecord);
+      }
+      currentRecord = null;
+      currentKey = null;
+    };
+
+    text.split(/\r?\n/).forEach(function (line) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) return;
+
+      const separator = trimmed.indexOf("=");
+      if (separator > 0) {
+        const key = trimmed.slice(0, separator).trim();
+        const value = trimmed.slice(separator + 1).trim();
+        const upperKey = key.toUpperCase();
+
+        if (currentRecord && (upperKey === "ROLE" || upperKey === "YEAR") && (currentRecord[upperKey] || currentRecord[key] || "")) {
+          const previousValue = String(currentRecord[upperKey] || currentRecord[key] || "").trim();
+          if (previousValue && previousValue !== value) {
+            finalizeCurrentRecord();
+          }
+        }
+
+        if (!currentRecord) currentRecord = {};
+        currentKey = key;
+        currentRecord[key] = value;
+        return;
+      }
+
+      if (currentRecord && currentKey) {
+        currentRecord[currentKey] = (currentRecord[currentKey] ? currentRecord[currentKey] + "\n" : "") + trimmed;
+      }
+    });
+
+    finalizeCurrentRecord();
+    return records.filter(function (record) { return Object.keys(record).length; });
   };
   const parseConfig = function (text) {
     const config = {};
@@ -76,7 +113,7 @@
     const heading = pageHero.querySelector("h2");
     const breadcrumb = document.createElement("nav"); breadcrumb.className = "breadcrumbs"; breadcrumb.setAttribute("aria-label", "Breadcrumb");
     const pageName = heading ? heading.textContent.trim().toUpperCase() : "PAGE";
-    const isDedicatedStudentPage = /\/pages\/(student-support|attendance-code-of-conduct|student-educational-verification|student-achievements|our-services|clubs|cells|committees|centre-for-excellence|magazine-newsletter)\.html$/.test(window.location.pathname);
+    const isDedicatedStudentPage = /\/pages\/(student-support|attendance-code-of-conduct|student-educational-verification|student-achievements|student-placements|our-services|clubs|cells|committees|centre-for-excellence|magazine|grievance-cell|magazine-newsletter)\.html$/.test(window.location.pathname);
     const studentZoneCrumb = isDedicatedStudentPage ? '<a href="' + pageBase + 'pages/student-zone.html">STUDENT ZONE</a><span aria-hidden="true">&gt;</span>' : "";
     breadcrumb.innerHTML = '<a href="' + pageBase + 'index.html">HOME</a><span aria-hidden="true">&gt;</span>' + studentZoneCrumb + '<span>' + pageName + "</span>";
     pageHero.insertBefore(breadcrumb, pageHero.firstChild);
@@ -101,6 +138,35 @@
     nav.querySelectorAll(".nav-group-toggle").forEach(function (button) { const submenu = document.getElementById(button.getAttribute("aria-controls")); button.addEventListener("click", function () { const expanded = button.getAttribute("aria-expanded") === "true"; nav.querySelectorAll(".nav-group-toggle").forEach(function (item) { item.setAttribute("aria-expanded", "false"); }); nav.querySelectorAll(".nav-submenu").forEach(function (item) { item.hidden = true; }); button.setAttribute("aria-expanded", String(!expanded)); submenu.hidden = expanded; }); button.addEventListener("keydown", function (event) { if (event.key === "ArrowDown" && button.getAttribute("aria-expanded") === "true") { const firstSubmenuLink = submenu.querySelector("a"); if (firstSubmenuLink) { event.preventDefault(); firstSubmenuLink.focus(); } } }); });
     document.querySelectorAll(".main-nav a").forEach(function (link) { const linkPath = new URL(link.href).pathname.replace(/\/$/, ""); const currentPath = window.location.pathname.replace(/\/$/, ""); if (linkPath === currentPath || (linkPath.endsWith("/index.html") && currentPath.endsWith("/"))) { link.classList.add("active"); link.setAttribute("aria-current", "page"); const group = link.closest(".nav-group"); const groupToggle = group && group.querySelector(".nav-group-toggle"); if (groupToggle) groupToggle.classList.add("active"); } });
   };
+  const initializeSearch = function () {
+    const toggle = document.querySelector(".search-toggle"); const panel = document.getElementById("site-search"); const form = panel && panel.querySelector(".site-search"); const input = form && form.querySelector("input"); if (!toggle || !panel || !form || !input) return;
+    const closeSearch = function () { panel.hidden = true; toggle.setAttribute("aria-expanded", "false"); };
+    const openSearch = function () { panel.hidden = false; toggle.setAttribute("aria-expanded", "true"); window.setTimeout(function () { input.focus(); }, 40); };
+    toggle.addEventListener("click", function () { if (panel.hidden) openSearch(); else closeSearch(); });
+    document.addEventListener("click", function (event) { if (!panel.hidden && !panel.contains(event.target) && !toggle.contains(event.target)) closeSearch(); });
+    document.addEventListener("keydown", function (event) { if (event.key === "Escape" && !panel.hidden) closeSearch(); });
+    const destinations = [
+      { label: "home", href: pageBase + "index.html" }, { label: "about", href: pageBase + "pages/vision-and-mission.html" }, { label: "principal", href: pageBase + "pages/principal.html" },
+      { label: "academics", href: pageBase + "pages/academics.html" }, { label: "departments", href: pageBase + "pages/departments.html" }, { label: "courses", href: pageBase + "pages/academics.html" },
+      { label: "admissions", href: pageBase + "pages/admissions.html" }, { label: "timetable", href: pageBase + "pages/timetable.html" }, { label: "syllabus", href: pageBase + "pages/syllabi.html" },
+      { label: "facilities", href: pageBase + "pages/facilities.html" }, { label: "infrastructure", href: pageBase + "pages/infrastructure.html" },
+      { label: "student zone", href: pageBase + "pages/student-zone.html" }, { label: "achievements", href: pageBase + "pages/student-achievements.html" }, { label: "placements", href: pageBase + "pages/student-placements.html" },
+      { label: "cells", href: pageBase + "pages/cells.html" }, { label: "committees", href: pageBase + "pages/committees.html" }, { label: "magazine", href: pageBase + "pages/magazine.html" },
+      { label: "results", href: pageBase + "pages/result-analysis.html" }, { label: "question papers", href: pageBase + "pages/previous-year-question-papers.html" }, { label: "notices", href: pageBase + "pages/notices.html" },
+      { label: "gallery", href: pageBase + "pages/gallery.html" }, { label: "downloads", href: pageBase + "pages/downloads.html" }, { label: "contact", href: pageBase + "pages/contact.html" }, { label: "nss", href: pageBase + "pages/nss.html" }
+    ];
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const query = input.value.trim().toLowerCase();
+      if (!query) { input.focus(); return; }
+      const match = destinations.find(function (entry) { return entry.label.includes(query) || query.includes(entry.label); });
+      if (match) {
+        window.location.href = match.href;
+        return;
+      }
+      window.location.href = pageBase + "pages/notices.html";
+    });
+  };
   const initializeBackToTop = function () { if (backToTopInitialized) return; backToTopInitialized = true; const backTop = document.querySelector(".back-to-top") || document.createElement("button"); backTop.className = "back-to-top"; backTop.type = "button"; backTop.setAttribute("aria-label", "Back to top"); backTop.innerHTML = "<span aria-hidden=\"true\">↑</span>"; if (!backTop.parentElement) document.body.appendChild(backTop); const update = function () { backTop.classList.toggle("is-visible", window.scrollY > 420); }; window.addEventListener("scroll", update, { passive: true }); backTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }); update(); };
   const notifyReady = function () { ready = true; window.dispatchEvent(new CustomEvent("site:ready")); readyCallbacks.splice(0).forEach(function (callback) { try { callback(); } catch (error) { console.error("Page initialization failed.", error); } }); };
 
@@ -110,6 +176,6 @@
   const headerReady = loadComponent("site-header", "header.html");
   loadComponent("site-footer", "footer.html").catch(function () { console.warn("Footer component unavailable."); });
   Promise.all([configReady, headerReady]).then(function () {
-    applySiteConfig(); addBreadcrumbs(); const year = document.getElementById("year"); if (year) year.textContent = new Date().getFullYear(); initializeNavigation(); initializeBackToTop(); document.body.classList.add("page-ready"); loadingIndicator.classList.add("is-hidden"); window.setTimeout(function () { loadingIndicator.remove(); }, 220); notifyReady();
-  }).catch(function () { applySiteConfig(); initializeNavigation(); initializeBackToTop(); notifyReady(); });
+    applySiteConfig(); addBreadcrumbs(); const year = document.getElementById("year"); if (year) year.textContent = new Date().getFullYear(); initializeNavigation(); initializeSearch(); initializeBackToTop(); document.body.classList.add("page-ready"); loadingIndicator.classList.add("is-hidden"); window.setTimeout(function () { loadingIndicator.remove(); }, 220); notifyReady();
+  }).catch(function () { applySiteConfig(); initializeNavigation(); initializeSearch(); initializeBackToTop(); notifyReady(); });
 })();

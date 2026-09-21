@@ -1,45 +1,65 @@
-# One consolidated syllabus PDF per department. Leave a PDF field empty until an official file is available.
+# Department → Course / Programme → PDF
+# Leave the PDF empty until an official file is available.
 department=Botany
-pdf=
+course=Botany
+pdf=assets/syllabi/botany_syllabus.pdf
 
 department=Chemistry
-pdf=
+course=Chemistry
+pdf=assets\syllabi\chemistry_syllubus.pdf
 
 department=Commerce
-pdf=
+course=Commerce
+pdf=assets/syllabi/commerce_syllabus.pdf
+
+department=Commerce
+course=B.Com Computer Applications
+pdf=assets\syllabi\b.com_cs_syllabus.pdf
 
 department=Computer Science
-pdf=
+course=Computer Science
+pdf=assets/syllabi/bsc_cs_syllabus.pdf
 
 department=Economics
-pdf=
+course=Economics
+pdf=assets/syllabi/economics syllabus.pdf
 
 department=English
-pdf=
+course=English
+pdf=assets/syllabi/english_syllabus.pdf
 
 department=History
-pdf=
+course=History
+pdf=assets/syllabi/History_Syllabus.pdf
 
 department=Mathematics
-pdf=
+course=Mathematics
+pdf=assets/syllabi/math_syllabus.pdf
 
 department=Physics
-pdf=
+course=Physics
+pdf=assets/syllabi/physics_syllabus.pdf
 
 department=Political Science
-pdf=
+course=Political Science
+pdf=assets/syllabi/politicalscience.pdf
 
 department=Statistics
+course=Statistics
 pdf=
 
 department=Telugu
-pdf=
+course=Telugu
+pdf=assets/syllabi/telugu_syllabus.pdf
 
 department=Wellness
+course=Wellness
 pdf=
 
 department=Physical Education
+course=Physical Education
 pdf=
 
 department=Zoology
-pdf=
+course=Zoology
+pdf=assets/syllabi/zoology_syllabus.pdf
