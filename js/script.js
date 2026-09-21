@@ -27,43 +27,40 @@
   const readyCallbacks = [];
   const parseKeyValueBlocks = function (text) {
     const records = [];
-    let currentRecord = null;
+    let currentRecord = {};
     let currentKey = null;
-
+    const primaryKeys = new Set(["ROLE", "NAME", "YEAR", "DEPARTMENT", "COURSE", "PROGRAMME", "TITLE", "SECTION"]);
     const finalizeCurrentRecord = function () {
-      if (currentRecord && Object.keys(currentRecord).length) {
-        records.push(currentRecord);
+      if (Object.keys(currentRecord).length) {
+        records.push(Object.assign({}, currentRecord));
+        currentRecord = {};
       }
-      currentRecord = null;
       currentKey = null;
     };
 
     text.split(/\r?\n/).forEach(function (line) {
       const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith("#")) return;
-
-      const separator = trimmed.indexOf("=");
-      if (separator > 0) {
-        const key = trimmed.slice(0, separator).trim();
-        const value = trimmed.slice(separator + 1).trim();
-        const upperKey = key.toUpperCase();
-
-        if (currentRecord && (upperKey === "ROLE" || upperKey === "YEAR") && (currentRecord[upperKey] || currentRecord[key] || "")) {
-          const previousValue = String(currentRecord[upperKey] || currentRecord[key] || "").trim();
-          if (previousValue && previousValue !== value) {
-            finalizeCurrentRecord();
-          }
-        }
-
-        if (!currentRecord) currentRecord = {};
-        currentKey = key;
-        currentRecord[key] = value;
+      if (!trimmed || trimmed.startsWith("#")) {
+        if (trimmed === "") finalizeCurrentRecord();
         return;
       }
 
-      if (currentRecord && currentKey) {
-        currentRecord[currentKey] = (currentRecord[currentKey] ? currentRecord[currentKey] + "\n" : "") + trimmed;
+      const separator = line.indexOf("=");
+      if (separator < 0) {
+        if (currentKey && Object.keys(currentRecord).length) {
+          currentRecord[currentKey] = (currentRecord[currentKey] ? currentRecord[currentKey] + "\n" : "") + trimmed;
+        }
+        return;
       }
+
+      const key = line.slice(0, separator).trim();
+      const upperKey = key.toUpperCase();
+      if (primaryKeys.has(upperKey) && Object.keys(currentRecord).length && (currentRecord[upperKey] || currentRecord[key])) {
+        finalizeCurrentRecord();
+      }
+
+      currentKey = key;
+      currentRecord[key] = line.slice(separator + 1).trim();
     });
 
     finalizeCurrentRecord();
