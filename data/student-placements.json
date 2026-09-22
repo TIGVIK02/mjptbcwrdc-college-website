@@ -1,0 +1,472 @@
+{
+  "records": [
+    {
+      "student": "A Ashwitha",
+      "company": "Big Basket",
+      "course": "B Com(CA)",
+      "role": "Sales",
+      "package": "1.9L p/a"
+    },
+    {
+      "student": "M Jyothi",
+      "company": "Big Basket",
+      "course": "B Com(CA)",
+      "role": "Sales",
+      "package": "1.9L p/a"
+    },
+    {
+      "student": "K Swetha",
+      "company": "Cognizant",
+      "course": "B Com(BA)",
+      "role": "Data Analysis",
+      "package": "2.5L p/a"
+    },
+    {
+      "student": "G Madhavi",
+      "company": "Digitide solutions ltd",
+      "course": "B Com(CA)",
+      "role": "Apprentice-Executive",
+      "package": "1.6L p/a"
+    },
+    {
+      "student": "R poojitha",
+      "company": "SBC Accountant",
+      "course": "B Com(CA)",
+      "role": "tax audit",
+      "package": "1.8L p/a"
+    },
+    {
+      "student": "N Vinusha",
+      "company": "SBI",
+      "course": "B Com(CA)",
+      "role": "TRE",
+      "package": "2.4L p/a"
+    },
+    {
+      "student": "BHEEMAGANI SWATHI",
+      "company": "C2C",
+      "course": "BSC COMPUTER SCIENCE",
+      "academicYear": "2023-2026"
+    },
+    {
+      "student": "Bandari Kavya",
+      "company": "Vijaya fertilisers",
+      "course": "Bsc- bzc",
+      "academicYear": "2025-2026"
+    },
+    {
+      "student": "MADASI PRIYANKA",
+      "company": "Axis bank",
+      "course": "BSC-Computer science",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Rapaka Vaishnavi",
+      "company": "C2C",
+      "course": "Bsc science",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Akshaya",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Akula",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Anusha",
+      "company": "Comett Staffing",
+      "course": "BA",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Ashwini",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "BHEEMAGANI",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Boggula",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "DEVARAPALLY",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "GANDLA",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "GAYATHRI",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Gumpu",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kala",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kalva",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kasaraboina",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Katuku",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Korutoori",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kudurupaka",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kyasagalla",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "MADASI",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "MOUNIKA",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Maddi",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Nali",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Nayini",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Nellikanti",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Nellikanti",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Orsu",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "POLAJI",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Pallapu",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Pallapu",
+      "company": "Comett Staffing",
+      "course": "BA",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Polepally",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Pusala",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Rapaka",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Shataboina",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Sirikonda Trupthi",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Sravani",
+      "company": "Comett Staffing",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "THARIGOPPULA",
+      "company": "Comett Staffing",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Vaarla",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Yata",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "ch",
+      "company": "Comett Staffing",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Akhila",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Akshaya Bhanu",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Anitha",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Anjali",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Anusha",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Bhavya",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Ch",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Gajji",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Gajji",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Jogu",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "KIRTHANA",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kavya",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Kavya",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Lavanya",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Laxmi prasanna",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Manusha",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "NAVYA",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Poojitha",
+      "company": "Quess Corp",
+      "course": "BA",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Rajeshwari",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Renuka",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Roopa",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "SRILAMANTHULA",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Spandana",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Srija",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Trupthi",
+      "company": "Quess Corp",
+      "course": "B.Com",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Vaishnavi",
+      "company": "Quess Corp",
+      "course": "MPCs",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Varshika",
+      "company": "Quess Corp",
+      "course": "BZC",
+      "academicYear": "2026"
+    },
+    {
+      "student": "Bbhutham Ashritha",
+      "company": "Young india",
+      "course": "Bsc bzc",
+      "academicYear": "2026"
+    },
+    {
+      "student": "DEVARAPALLY NAVYA",
+      "company": "Young india",
+      "course": "B.sc computer science",
+      "academicYear": "2026"
+    }
+  ]
+}

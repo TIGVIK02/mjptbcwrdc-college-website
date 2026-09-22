@@ -1,32 +1,107 @@
 [
   {
-    "title": "CHEMISTRY",
+    "title": "Botany",
+    "year": null,
+    "pdf": "assets/pyq/botany.pdf"
+  },
+  {
+    "title": "Chemistry",
     "year": null,
     "pdf": "assets/pyq/CHEMISTRY.pdf"
   },
   {
-    "title": "chemistry Internal",
+    "title": "Chemistry (Internal)",
     "year": null,
     "pdf": "assets/pyq/chemistry Internal.pdf"
   },
   {
-    "title": "ECONOMICS",
+    "title": "Commerce",
+    "year": null,
+    "pdf": "assets/pyq/Commerce.pdf"
+  },
+  {
+    "title": "Commerce (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/Commerce Internal.pdf"
+  },
+  {
+    "title": "Computer Science",
+    "year": null,
+    "pdf": "assets/pyq/Computer Science.pdf"
+  },
+  {
+    "title": "Economics",
     "year": null,
     "pdf": "assets/pyq/ECONOMICS.pdf"
   },
   {
-    "title": "Economics Internal",
+    "title": "Economics (Internal)",
     "year": null,
     "pdf": "assets/pyq/Economics Internal.pdf"
   },
   {
-    "title": "TELUGU",
+    "title": "English",
+    "year": null,
+    "pdf": "assets/pyq/English.pdf"
+  },
+  {
+    "title": "English (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/English Internal.pdf"
+  },
+  {
+    "title": "Mathematics (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/Mathematics Internal.pdf"
+  },
+  {
+    "title": "Physics",
+    "year": null,
+    "pdf": "assets/pyq/Physics.pdf"
+  },
+  {
+    "title": "Physics (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/Physics Internal.pdf"
+  },
+  {
+    "title": "Political Science",
+    "year": null,
+    "pdf": "assets/pyq/Political Science.pdf"
+  },
+  {
+    "title": "Political Science (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/Political Science Internal.pdf"
+  },
+  {
+    "title": "Statistics",
+    "year": null,
+    "pdf": "assets/pyq/Statistics.pdf"
+  },
+  {
+    "title": "Statistics (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/statistics Internal.pdf"
+  },
+  {
+    "title": "Telugu",
     "year": null,
     "pdf": "assets/pyq/TELUGU.pdf"
   },
   {
-    "title": "Telugu Internal",
+    "title": "Telugu (Internal)",
     "year": null,
     "pdf": "assets/pyq/Telugu Internal.pdf"
+  },
+  {
+    "title": "Zoology",
+    "year": null,
+    "pdf": "assets/pyq/Zoology.pdf"
+  },
+  {
+    "title": "Zoology (Internal)",
+    "year": null,
+    "pdf": "assets/pyq/Zoology Internal.pdf"
   }
 ]

@@ -1,32 +1,36 @@
 STATIC CONTENT BUILD REPORT
 ========================================================================
-Build started:   2026-09-15T20:26:42.754217+00:00
-Build completed: 2026-09-15T20:26:43.295511+00:00
+Build started:   2026-09-22T01:46:33.185112+00:00
+Build completed: 2026-09-22T01:46:33.942375+00:00
 Mode: BUILD
 
 BUILD SUMMARY
 ------------------------------------------------------------------------
-Files scanned: 5
-JSON files found: 5
-JSON files generated: 3
+Files scanned: 7
+JSON files found: 7
+JSON files generated: 2
 JSON files updated: 0
-JSON files unchanged: 3
+JSON files unchanged: 2
 Warnings: 1
-Errors: 0
+Errors: 22
 
 GENERATED OUTPUTS
 ------------------------------------------------------------------------
-UNCHANGED: assets/notice_files/pdf-notices.txt
-UNCHANGED: data/magazine.json
+UPDATED: assets/notice_files/pdf-notices.txt
 UNCHANGED: data/media-manifest.json
-UNCHANGED: data/pyq.json
+UNCHANGED: data/result-analysis.json
+UPDATED: robots.txt
+UPDATED: site.webmanifest
+UPDATED: sitemap.xml
 
 JSON FILE AUDIT
 ------------------------------------------------------------------------
 .vscode/settings.json | EXTERNAL | VALID | NOT MODIFIED | editor configuration
-data/magazine.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
+data/magazine.json | GENERATED | VALID | NOT MODIFIED | known source-to-manifest generator
 data/media-manifest.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
-data/pyq.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
+data/pyq.json | GENERATED | VALID | NOT MODIFIED | known source-to-manifest generator
+data/result-analysis.json | GENERATED | VALID | UNCHANGED | known source-to-manifest generator
+data/student-placements.json | UNKNOWN | VALID | NOT MODIFIED | no safe generator/source mapping identified
 website raw data/timetable_output/timetable_manifest.json | GENERATED | VALID | NOT MODIFIED | website raw data/generate_timetables.py
 
 UNSUPPORTED FILES
@@ -39,4 +43,25 @@ TIMETABLES: delegated generator reported 3 warning(s)
 
 ERRORS / BROKEN REFERENCES
 ------------------------------------------------------------------------
-None.
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/botany.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/CHEMISTRY.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/chemistry Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Commerce.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Commerce Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Computer Science.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/ECONOMICS.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Economics Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/English.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/English Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Mathematics Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Physics.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Physics Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Political Science.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Political Science Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Statistics.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/statistics Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/TELUGU.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Telugu Internal.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Zoology.pdf
+DUPLICATE REFERENCE: data/pyq.json: assets/pyq/Zoology Internal.pdf
+DUPLICATE REFERENCE: data/magazine.json: assets/magazine/Meraki-2026.pdf

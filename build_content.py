@@ -119,28 +119,99 @@ def year_from_name(name: str) -> int | None:
     return int(match.group(1)) if match else None
 
 
+def pyq_subject_and_type(path: Path) -> tuple[str, str]:
+    label = re.sub(r"[_-]+", " ", path.stem).strip()
+    label = re.sub(r"\s+", " ", label)
+    normalized = label.strip()
+    if not normalized:
+        return "Untitled", "Regular"
+
+    subject = normalized
+    variant = "Regular"
+    lowered = normalized.casefold()
+    if " internal" in lowered:
+        pattern = re.search(r"^(.*?)(?:\s+internal)\s*$", normalized, flags=re.IGNORECASE)
+        if pattern:
+            subject = pattern.group(1).strip()
+            variant = "Internal"
+    elif " regular" in lowered:
+        pattern = re.search(r"^(.*?)(?:\s+regular)\s*$", normalized, flags=re.IGNORECASE)
+        if pattern:
+            subject = pattern.group(1).strip()
+            variant = "Regular"
+
+    subject = re.sub(r"\s+", " ", subject).strip()
+    title = " ".join(part if part.isupper() and len(part) <= 3 else part.capitalize() for part in subject.split())
+    title = re.sub(r"\bAnd\b", "and", title)
+    title = re.sub(r"\s+", " ", title).strip()
+    return (title or "Untitled"), variant
+
+
 def display_name(path: Path) -> str:
-    return re.sub(r"\s+", " ", re.sub(r"[_-]+", " ", path.stem)).strip()
+    subject, variant = pyq_subject_and_type(path)
+    if variant == "Internal":
+        return f"{subject} (Internal)" if subject else "Internal"
+    return subject if subject else "Regular"
 
 
 def build_pdf_manifest(folder_name: str) -> list[dict[str, Any]]:
     folder = ASSETS / folder_name
-    records = []
+    records_by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    collisions: list[str] = []
     for path in recursive_files(folder, {".pdf"}):
-        records.append({
-            "title": display_name(path),
+        subject, variant = pyq_subject_and_type(path)
+        title = display_name(path)
+        key = (subject.casefold(), variant.casefold())
+        if key in records_by_key:
+            collisions.append(f"{relative_key(path)} conflicts with {records_by_key[key]['file']}")
+            continue
+        record = {
+            "subject": subject,
+            "type": variant,
+            "title": title,
             "year": year_from_name(path.name),
+            "file": web_path(path),
             "pdf": web_path(path),
-        })
+        }
+        records_by_key[key] = record
+
+    if collisions:
+        raise ValueError("Duplicate PYQ entries detected: " + "; ".join(collisions))
+
+    records = list(records_by_key.values())
     return sorted(
         records,
         key=lambda record: (
-            record["year"] is None,
-            -(record["year"] or 0),
+            record["subject"].casefold(),
+            0 if record["type"] == "Regular" else 1,
             record["title"].casefold(),
-            record["pdf"].casefold(),
+            record["file"].casefold(),
         ),
     )
+
+
+def result_analysis_title(filename: str) -> str:
+    stem = Path(filename).stem
+    if not stem:
+        return "Result Analysis"
+    cleaned = re.sub(r"[_-]+", " ", stem)
+    cleaned = re.sub(r"(?<=[A-Za-z])(?=\d)", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    if not cleaned:
+        return "Result Analysis"
+    return " ".join(part.capitalize() for part in cleaned.split())
+
+
+def build_result_analysis_manifest() -> dict[str, Any]:
+    folder = ASSETS / "result_analysis"
+    files = []
+    for path in sorted(folder.glob("*.xlsx"), key=lambda item: item.name.casefold()):
+        files.append({
+            "title": result_analysis_title(path.name),
+            "filename": path.name,
+            "path": web_path(path),
+        })
+    return {"files": files}
 
 
 def build_notice_metadata() -> str:
@@ -154,6 +225,7 @@ GENERATORS: dict[str, Callable[[], Any]] = {
     "data/media-manifest.json": build_media_manifest,
     "data/pyq.json": lambda: build_pdf_manifest("pyq"),
     "data/magazine.json": lambda: build_pdf_manifest("magazine"),
+    "data/result-analysis.json": build_result_analysis_manifest,
 }
 
 
@@ -318,6 +390,13 @@ def validate_shape(path: Path, value: Any, state: BuildState) -> None:
             for index, record in enumerate(value):
                 if not isinstance(record, dict) or not isinstance(record.get("pdf"), str) or not isinstance(record.get("title"), str):
                     state.errors.append(f"INVALID RECORD: {key}[{index}]: expected title and pdf")
+    elif key == "data/result-analysis.json":
+        if not isinstance(value, dict) or not isinstance(value.get("files"), list):
+            state.errors.append(f"INVALID STRUCTURE: {key}: expected an object with a files list")
+        else:
+            for index, record in enumerate(value["files"]):
+                if not isinstance(record, dict) or not isinstance(record.get("title"), str) or not isinstance(record.get("filename"), str) or not isinstance(record.get("path"), str):
+                    state.errors.append(f"INVALID RECORD: {key}[{index}]: expected title, filename, and path")
     elif key == "website raw data/timetable_output/timetable_manifest.json" and not isinstance(value, list):
         state.errors.append(f"INVALID STRUCTURE: {key}: expected a list")
 
@@ -344,6 +423,7 @@ def audit_source_folders(state: BuildState) -> None:
     folder_specs = {
         "assets/pyq": {".pdf"},
         "assets/magazine": {".pdf"},
+        "assets/result_analysis": {".xlsx"},
         "assets/images/college_life_in_focus": HOME_EXTENSIONS,
         "assets/images/campus_life": HOME_EXTENSIONS,
     }

@@ -1,0 +1,18 @@
+{
+  "name": "MJPTBCWRDC(W), Station Ghanpur",
+  "short_name": "MJPTBCWRDC(W)",
+  "description": "Official website of Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Degree College for Women, Station Ghanpur.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#0b2540",
+  "icons": [
+    {
+      "src": "/assets/images/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+
