@@ -55,6 +55,7 @@ INDEXABLE_PAGES = [
 ]
 SUPPORTED_MEDIA = {".jpg", ".jpeg", ".png", ".pdf"}
 HOME_EXTENSIONS = SUPPORTED_MEDIA | {".svg", ".webp"}
+EVENT_MEDIA_EXTENSIONS = SUPPORTED_MEDIA | {".webp", ".mp4", ".webm", ".mov", ".m4v", ".avi", ".ogg"}
 IGNORED_DIRS = {".git", ".github", ".venv", "node_modules", "__pycache__"}
 
 
@@ -112,6 +113,48 @@ def build_media_manifest() -> dict[str, Any]:
         "campusLife": [web_path(item) for item in direct_files(ASSETS / "images" / "campus_life", HOME_EXTENSIONS)],
         "gallery": gallery,
     }
+
+
+def clean_event_title(file_name: str) -> str:
+    cleaned = file_name.replace("_", " ").replace("-", " ")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    cleaned = re.sub(r"\s*\(\d+\)\s*$", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s*[-–—]\s*$", "", cleaned)
+    if not cleaned:
+        return "Event"
+    return cleaned.strip()
+
+
+def event_media_type(path: Path) -> str:
+    suffix = path.suffix.lower()
+    if suffix in {".jpg", ".jpeg", ".png", ".webp"}:
+        return "image"
+    if suffix in {".mp4", ".webm", ".mov", ".m4v", ".avi", ".ogg"}:
+        return "video"
+    if suffix == ".pdf":
+        return "pdf"
+    return "file"
+
+
+def build_events_manifest() -> list[dict[str, Any]]:
+    folder = ASSETS / "events"
+    records: list[dict[str, Any]] = []
+    if not folder.is_dir():
+        return records
+    for path in sorted(folder.rglob("*"), key=lambda item: item.name.casefold()):
+        if not path.is_file() or path.suffix.lower() not in EVENT_MEDIA_EXTENSIONS:
+            continue
+        title = clean_event_title(path.stem)
+        record = {
+            "title": title,
+            "type": event_media_type(path),
+            "path": web_path(path),
+            "file": path.name,
+            "year": year_from_name(path.name),
+            "extension": path.suffix.lower().lstrip("."),
+        }
+        records.append(record)
+    return records
 
 
 def year_from_name(name: str) -> int | None:
@@ -223,6 +266,7 @@ def build_notice_metadata() -> str:
 
 GENERATORS: dict[str, Callable[[], Any]] = {
     "data/media-manifest.json": build_media_manifest,
+    "data/events.json": build_events_manifest,
     "data/pyq.json": lambda: build_pdf_manifest("pyq"),
     "data/magazine.json": lambda: build_pdf_manifest("magazine"),
     "data/result-analysis.json": build_result_analysis_manifest,
@@ -383,13 +427,21 @@ def validate_shape(path: Path, value: Any, state: BuildState) -> None:
     if key == "data/media-manifest.json":
         if not isinstance(value, dict) or not all(isinstance(value.get(name), list) for name in ("collegeLife", "campusLife", "gallery")):
             state.errors.append(f"INVALID STRUCTURE: {key}: expected collegeLife, campusLife, and gallery lists")
-    elif key in {"data/pyq.json", "data/magazine.json"}:
+    elif key in {"data/events.json", "data/pyq.json", "data/magazine.json"}:
         if not isinstance(value, list):
             state.errors.append(f"INVALID STRUCTURE: {key}: expected a list")
         else:
             for index, record in enumerate(value):
-                if not isinstance(record, dict) or not isinstance(record.get("pdf"), str) or not isinstance(record.get("title"), str):
-                    state.errors.append(f"INVALID RECORD: {key}[{index}]: expected title and pdf")
+                if not isinstance(record, dict):
+                    state.errors.append(f"INVALID RECORD: {key}[{index}]: expected an object")
+                    continue
+                if key == "data/events.json":
+                    required = ("title", "type", "path")
+                else:
+                    required = ("pdf", "title")
+                for field_name in required:
+                    if not isinstance(record.get(field_name), str):
+                        state.errors.append(f"INVALID RECORD: {key}[{index}]: expected {field_name} as a string")
     elif key == "data/result-analysis.json":
         if not isinstance(value, dict) or not isinstance(value.get("files"), list):
             state.errors.append(f"INVALID STRUCTURE: {key}: expected an object with a files list")
@@ -421,6 +473,7 @@ def audit_json_files(state: BuildState) -> None:
 
 def audit_source_folders(state: BuildState) -> None:
     folder_specs = {
+        "assets/events": EVENT_MEDIA_EXTENSIONS,
         "assets/pyq": {".pdf"},
         "assets/magazine": {".pdf"},
         "assets/result_analysis": {".xlsx"},

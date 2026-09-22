@@ -4,7 +4,6 @@
 node_modules/
 dev-samples/
 raw resourses/
-website raw data/
 tools/
 README.md
 .gitignore

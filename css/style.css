@@ -42,6 +42,11 @@ table {
 .timetable-view { margin-top: 2rem; }
 .timetable-frame-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .timetable-frame { display: block; width: 100%; min-width: 760px; height: 1100px; border: 0; }
+.pdf-viewer { width: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.pdf-viewer iframe { display: block; width: 100%; min-height: 540px; height: min(78vh, 860px); border: 0; background: #fff; }
+.pdf-actions { margin-top: 1rem; }
+.pdf-download { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; padding: 0.75rem 1.2rem; background: var(--navy); color: var(--paper); border: 1px solid var(--navy); border-radius: 999px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.pdf-download:hover, .pdf-download:focus-visible { background: var(--gold); color: var(--navy); }
 
 html {
   scroll-behavior: smooth;
