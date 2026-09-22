@@ -50,7 +50,7 @@
   },
   {
     "programme": "BCOM_BA",
-    "title": "B.Com. (Business Administration)",
+    "title": "B.Com. (Business Analytics)",
     "year": 3,
     "section": null,
     "path": "bcom_ba/year_3.html"
@@ -59,8 +59,8 @@
     "programme": "BZC",
     "title": "B.Z.C.",
     "year": 1,
-    "section": "A",
-    "path": "bzc/year_1/section_a.html"
+    "section": null,
+    "path": "bzc/year_1.html"
   },
   {
     "programme": "BZC",
@@ -80,8 +80,8 @@
     "programme": "MPCS",
     "title": "M.P.Cs.",
     "year": 1,
-    "section": "A",
-    "path": "mpcs/year_1/section_a.html"
+    "section": null,
+    "path": "mpcs/year_1.html"
   },
   {
     "programme": "MPCS",

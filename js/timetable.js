@@ -13,7 +13,7 @@
     const title = page.querySelector("#selected-timetable-title");
     const frame = page.querySelector(".timetable-frame");
     const manifestPath = Site.pageBase + "website raw data/timetable_output/timetable_manifest.json";
-    const programmeNames = { BA: "B.A.", BCOM_BA: "B.Com. (Business Administration)", BCOM_CA: "B.Com. (Computer Applications)", BZC: "B.Z.C.", MPCS: "M.P.Cs.", MSCS: "M.Sc.s" };
+    const programmeNames = { BA: "B.A.", BCOM_BA: "B.Com. (Business Analytics)", BCOM_CA: "B.Com. (Computer Applications)", BZC: "B.Z.C.", MPCS: "M.P.Cs.", MSCS: "M.Sc.s" };
     let programmes = [];
     let selectedProgramme = null;
     let selectedYear = null;

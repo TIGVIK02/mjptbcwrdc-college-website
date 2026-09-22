@@ -106,7 +106,7 @@ def build_media_manifest() -> dict[str, Any]:
         for folder in folders:
             gallery.append({
                 "category": folder.name,
-                "files": [web_path(item) for item in direct_files(folder, SUPPORTED_MEDIA)],
+                "files": [web_path(item) for item in recursive_files(folder, SUPPORTED_MEDIA)],
             })
     return {
         "collegeLife": [web_path(item) for item in direct_files(ASSETS / "images" / "college_life_in_focus", HOME_EXTENSIONS)],

@@ -98,7 +98,7 @@ DEPARTMENTS = {
     },
     "BCOM_BA": {
         "folder": "bcom_ba",
-        "title": "B.Com. (Business Administration)",
+        "title": "B.Com. (Business Analytics)",
         "match": lambda s: bool(re.fullmatch(r"III\s+BCOM-BA", s, re.I)),
     },
     "BZC": {

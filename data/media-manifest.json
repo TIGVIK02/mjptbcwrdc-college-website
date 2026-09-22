@@ -15,16 +15,29 @@
     {
       "category": "INFRASTRUCTURE",
       "files": [
-        "assets/images/gallery/INFRASTRUCTURE/library1.jpg"
+        "assets/images/gallery/INFRASTRUCTURE/classroom2(1).jpg",
+        "assets/images/gallery/INFRASTRUCTURE/Dining_Area.jpg"
       ]
     },
     {
       "category": "Laboratory",
-      "files": []
+      "files": [
+        "assets/images/gallery/Laboratory/botanyLab1.jpg",
+        "assets/images/gallery/Laboratory/BotanyLab2.jpg",
+        "assets/images/gallery/Laboratory/BotanyLab3.jpg",
+        "assets/images/gallery/Laboratory/chemistry Lab2.jpg",
+        "assets/images/gallery/Laboratory/chemistry Lab4.jpg",
+        "assets/images/gallery/Laboratory/computerlab1.jpg",
+        "assets/images/gallery/Laboratory/physics Lab2.jpg",
+        "assets/images/gallery/Laboratory/Physics lab3.jpg",
+        "assets/images/gallery/Laboratory/physics Lab4.jpg",
+        "assets/images/gallery/Laboratory/physicsLab1.jpg"
+      ]
     },
     {
       "category": "LIBRARY",
       "files": [
+        "assets/images/gallery/LIBRARY/library1.jpg",
         "assets/images/gallery/LIBRARY/library_ReadingArea.jpg"
       ]
     },
