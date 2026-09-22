@@ -4,13 +4,7 @@ NAME=Sri Ponnam Prabhakar
 DESIGNATION=Minister for Transport & BC Welfare
 Government of Telangana
 IMAGE=assets/images/leadership/bc-welfare-minister.png
-DESCRIPTION=It gives me immense pleasure to present the Academic Calendar for the Academic Year 2026–27, brought out by the Telangana Backward Classes Welfare Mahatma Jyothiba Phule Residential Educational Institutions Society (MJPTBCWREIS). This calendar serves as a comprehensive guide for the smooth functioning of our Residential Schools, Junior Colleges, and Degree Colleges across the state.
-
-It outlines key academic schedules, examinations, vacations, and celebrations, while reflecting the Society’s commitment to providing holistic education to students from backward classes. With the continued support of the Government of Telangana, our institutions offer quality education, safe residential facilities, and nutritious food-fostering an environment where every child can thrive.
-
-I urge all teaching and non-teaching staff to remain dedicated to nurturing young minds, and encourage students to pursue excellence in academics, co-curricular, and extracurricular activities.
-
-Let us work together to empower our students and help them realize their full potential. With best wishes for a successful and enriching academic year 2026–27.
+DESCRIPTION=Championing inclusive education, equal opportunities and holistic development, with a vision of empowering students from Backward Classes communities to achieve academic excellence and build a brighter future.
 
 ROLE=PRINCIPAL SECRETARY (FAC)
 NAME=Smt. Bala Mayadevi, IAS.
@@ -18,27 +12,11 @@ DESIGNATION=Principal Secretary (FAC)
 Commissioner, BC Welfare Dept.,
 Government of Telangana
 IMAGE=assets/images/leadership/Bala_Mayadevi.png
-DESCRIPTION=It gives me great pleasure to extend my warm wishes to all our students, teachers, parents, and staff through the Academic Calendar for the Academic Year 2026–27 of the Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Educational Institutions Society (MJPTBCWREIS).
-
-This Academic Calendar serves as a guide for the systematic planning and smooth implementation of academic and co-curricular activities across our Residential Schools, Junior Colleges, and Degree Colleges. It reflects our commitment to academic excellence, discipline, and the holistic development of every student.
-
-With the continued support of the Government of Telangana, MJPTBCWREIS remains dedicated to providing quality education, a safe residential environment, and opportunities that help students grow into confident, responsible, and successful individuals.
-
-I sincerely appreciate the dedication of our Principals, teachers, and staff, and encourage every student to make the best use of the opportunities available and strive for excellence in all aspects of life.
-
-I wish everyone a successful, enriching, and rewarding Academic Year 2026–27.
+DESCRIPTION=Guiding the department towards quality education, effective implementation of welfare initiatives and the holistic development and empowerment of students from Backward Classes communities.
 
 ROLE=SECRETARY
 NAME=Sri. B. Saidulu, IFS
 DESIGNATION=Secretary
 MJPTBCWREIS, HYD.
 IMAGE=assets/images/leadership/B_Saidulu.png
-DESCRIPTION=It is with great pride and satisfaction that I present the Academic Calendar for the year 2026–27 of the Mahatma Jyothiba Phule Telangana Backward Classes Welfare Residential Educational Institutions Society (MJPTBCWREIS). This calendar outlines the academic framework and operational schedule for our Schools, Junior Colleges, and Degree Colleges across the state.
-
-Designed to provide clarity and structure, the calendar serves as a valuable guide for students, parents, faculty, and administrators. It details working days, holidays, examinations, academic activities, celebrations, and key events—facilitating effective planning and coordination.
-
-With the continued support of the Government of Telangana, MJPTBCWREIS remains committed to empowering students from backward classes through quality education, robust infrastructure, nutritious meals, and a safe residential environment. Our mission is to foster academic excellence, character building, and holistic development.
-
-I sincerely appreciate the unwavering efforts of our Principals, faculty, and staff, and urge them to continue inspiring students toward excellence in all spheres.
-
-Wishing everyone a productive and enriching academic year 2026–27.
+DESCRIPTION=Providing dynamic leadership towards strengthening residential higher education, promoting academic excellence and creating an enabling environment for the holistic development of students. His commitment to innovation, digital initiatives, institutional development and student empowerment continues to support the Society’s vision of creating greater opportunities for students from Backward Classes communities.
