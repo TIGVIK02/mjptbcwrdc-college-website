@@ -1,24 +1,72 @@
+# ============================================================
+# MJPTBCWRDC(W) College Website
+# Git Ignore Rules
+# ============================================================
+
+# ------------------------------------------------------------
 # Editors / IDEs
+# ------------------------------------------------------------
 .vscode/
 .idea/
 
-# Python
+# ------------------------------------------------------------
+# Python cache / virtual environments
+# ------------------------------------------------------------
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
 venv/
 .venv/
+env/
+ENV/
 
-# Environment / secrets
+# ------------------------------------------------------------
+# Environment variables / secrets
+# ------------------------------------------------------------
 .env
 .env.*
 !.env.example
 
-# OS files
+# ------------------------------------------------------------
+# Operating system files
+# ------------------------------------------------------------
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Temporary files
+# ------------------------------------------------------------
+# Temporary / runtime files
+# ------------------------------------------------------------
 *.tmp
 *.temp
 *.log
+
+# ------------------------------------------------------------
+# DO NOT IGNORE WEBSITE PROJECT CONTENT
+# ------------------------------------------------------------
+# HTML, CSS, JavaScript, JSON, TXT, PDFs, XLSX, images,
+# videos, website data, build scripts and assets are intentionally
+# tracked by Git.
+#
+# In particular, these directories MUST remain trackable:
+#
+# assets/
+# data/
+# components/
+# css/
+# js/
+# pages/
+# tools/
+# website raw data/
+#
+# Do not add broad rules such as:
+# *.pdf
+# *.xlsx
+# assets/
+# data/
+# pages/
+# js/
+# css/
+# tools/
