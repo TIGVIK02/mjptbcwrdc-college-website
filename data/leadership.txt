@@ -4,7 +4,7 @@ NAME=Sri Ponnam Prabhakar
 DESIGNATION=Minister for Transport & BC Welfare
 Government of Telangana
 IMAGE=assets/images/leadership/bc-welfare-minister.png
-DESCRIPTION=Championing inclusive education, equal opportunities and holistic development, with a vision of empowering students from Backward Classes communities to achieve academic excellence and build a brighter future.
+DESCRIPTION=Championing inclusive education and empowerment of Backward Classes communities by strengthening opportunities for higher education, skill development and career advancement. His vision and commitment to student welfare continue to support the creation of an enabling environment where young learners can realise their potential and contribute meaningfully to society.
 
 ROLE=PRINCIPAL SECRETARY (FAC)
 NAME=Smt. Bala Mayadevi, IAS.
